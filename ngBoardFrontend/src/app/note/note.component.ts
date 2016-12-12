@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.css']
 })
-export class NoteComponent { }
+export class NoteComponent {
+
+  private title: string = 'Frank Zappa';
+
+  GetNoteTitle() {
+    return `This note title is: ${this.title}`;
+  }
+}

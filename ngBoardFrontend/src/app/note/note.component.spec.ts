@@ -11,9 +11,9 @@ describe('NoteComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoteComponent ]
+      declarations: [NoteComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,4 +25,17 @@ describe('NoteComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render title in a p tag', async(() => {
+    fixture = TestBed.createComponent(NoteComponent);
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('p').textContent).toContain(` Rendered title: 'Frank Zappa'.`);
+  }));
+
+  it('should call GetNoteTitle and return title', async(() => {
+    fixture = TestBed.createComponent(NoteComponent);
+    expect(fixture.componentInstance.GetNoteTitle()).toContain(`This note title is: Frank Zappa`);
+  }));
+
 });
