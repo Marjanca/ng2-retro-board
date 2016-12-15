@@ -28,7 +28,7 @@ module.exports = function (wallaby) {
     files: [
       {pattern: 'src/**/*.ts', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
-      {pattern: 'src/**/*.css', load: false},
+      {pattern: 'src/**/*.scss', load: false},
       {pattern: 'src/**/*.html', load: false},
       {pattern: 'src/**/*spec.ts', ignore: true}
     ],
