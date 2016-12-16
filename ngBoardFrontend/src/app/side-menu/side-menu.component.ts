@@ -9,11 +9,23 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 export class SideMenuComponent implements AfterViewInit {
   @ViewChild('sideBarMenu') sideBarMenu;
 
+  sideMenuOpened: boolean = true;
+  sideMenuButtonText: string = '<';
+
   ngAfterViewInit() {
     this.sideBarMenu.nativeElement.style.left = '0';
   }
 
-  close() {
-    this.sideBarMenu.nativeElement.style.left = '-240px';
+  sideMenu() {
+
+    if (this.sideMenuOpened) {
+      this.sideMenuButtonText = '>';
+      this.sideBarMenu.nativeElement.style.left = '-230px';
+    } else {
+      this.sideMenuButtonText = '<';
+      this.sideBarMenu.nativeElement.style.left = '0';
+    }
+
+    this.sideMenuOpened = !this.sideMenuOpened;
   }
 }
