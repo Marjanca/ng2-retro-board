@@ -1,12 +1,24 @@
+$menuWidth: 250px;
+$menuBackgroundColor: royalblue;
+
 .sideMenu {
     height: 100%;
-    width: 250px;
+    width: $menuWidth;
     position: absolute;
     z-index: 1;
     top: 0;
-    left: -250px;
-    background-color: royalblue;
+    
+    background-color: $menuBackgroundColor;
     overflow-x: hidden;
     padding-top: 30px;
     transition: 0.5s;
+
+    &.expanded {
+        left: 0;
+    }
+
+    &.contracted {
+        left: -$menuWidth + 20px;
+    }
 }
+
