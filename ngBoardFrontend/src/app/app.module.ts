@@ -2,24 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { ButtonsModule } from 'ng2-bootstrap';
+import { SideMenuModule } from './side-menu/side-menu.module';
 
 import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
-import { SideMenuComponent } from './side-menu/side-menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent,
-    SideMenuComponent
+    NoteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    ButtonsModule
+    SideMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
