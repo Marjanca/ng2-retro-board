@@ -11,20 +11,18 @@ export class SideMenuComponent /* implements AfterViewInit */ {
 
   sideMenuOpened: boolean = true;
   sideMenuButtonText: string = '<';
-  sideMenuClasses: string = 'sideMenu expanded';
+  sideMenuExpanded = 'sideMenu expanded';
+  sideMenuContracted = 'sideMenu contracted';
+
+  sideMenuClasses: string = this.sideMenuExpanded;
 
   // ngAfterViewInit() {
   //   this.sideBarMenu.nativeElement.style.left = '0';
   // }
 
   sideMenu() {
-    if (this.sideMenuOpened) {
-      this.sideMenuButtonText = '>';
-      this.sideMenuClasses = 'sideMenu contracted';
-    } else {
-      this.sideMenuButtonText = '<';
-      this.sideMenuClasses = 'sideMenu expanded';
-    }
+    this.sideMenuClasses = this.sideMenuOpened ? this.sideMenuContracted : this.sideMenuExpanded;
+    this.sideMenuButtonText = this.sideMenuOpened ? '>' : '<';
 
     this.sideMenuOpened = !this.sideMenuOpened;
   }
