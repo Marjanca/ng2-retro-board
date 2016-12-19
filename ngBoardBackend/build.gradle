@@ -1,3 +1,6 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+
 buildscript {
 	ext {
 		springBootVersion = '1.4.2.RELEASE'
@@ -8,6 +11,25 @@ buildscript {
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
+}
+
+task buildFrontend(type:Exec) {
+	workingDir '../ngBoardFrontend'
+	if(Os.isFamily(Os.FAMILY_WINDOWS)) {
+		commandLine 'cmd', '/c', 'npm', 'install'
+	}else {
+		commandLine 'npm', 'install'
+	};
+}
+
+task copyFrontend(type: Copy) {
+	from('../ngBoardFrontend/dist')
+	into('src/main/resources/static')
+	include('*')
+}
+
+task bundle(dependsOn: ['buildFrontend', 'copyFrontend', 'jar']){
+	copyFrontend.mustRunAfter buildFrontend
 }
 
 apply plugin: 'java'
