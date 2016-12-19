@@ -1,5 +1,6 @@
-package com.zuehlke.ng2retroboard;
+package com.zuehlke.ng2retroboard.repository;
 
+import com.zuehlke.ng2retroboard.domain.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
