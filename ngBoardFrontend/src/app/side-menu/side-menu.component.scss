@@ -1,5 +1,9 @@
 $menuWidth: 250px;
-$menuBackgroundColor: royalblue;
+$menuBackgroundColor: rgba( 0, 0, 0, 0.8);
+$brandColor: #999999;
+$brandHoverColor: #fff;
+$linkColor: #999999;
+$linkHoverColor: #fff;
 
 .sideMenu {
     height: 100%;
@@ -22,3 +26,49 @@ $menuBackgroundColor: royalblue;
     }
 }
 
+
+.sideMenuNav {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sideMenuNav li {
+    text-indent: 20px;
+    line-height: 40px;
+    width: 80%;
+}
+
+.sideMenuNav li a {
+    display: block;
+    text-decoration: none;
+    color: $linkColor;
+}
+
+.sideMenuNav li a:hover {
+    text-decoration: none;
+    color: $linkHoverColor;
+}
+
+.sideMenuNav li a:active,
+.sideMenuNav li a:focus {
+    text-decoration: none;
+}
+
+.sideMenuNav > .sideMenuBrand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+    width: 100%;
+}
+
+.sideMenuNav > .sideMenuBrand a {
+    color: $brandColor;
+}
+
+.sideMenuNav > .sideMenuBrand a:hover {
+    color: $brandHoverColor;
+    background: none;
+    cursor: pointer;
+}
