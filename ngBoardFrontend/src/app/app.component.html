@@ -1,4 +1,7 @@
 <div class="container">
-  <app-side-menu></app-side-menu>
+  <app-side-menu 
+    [menuItems]="['Create board', 'Edit board', 'Delete board']"
+    (menuClicked)="menuItemClicked($event)">
+  </app-side-menu>
   <app-note></app-note>
 </div>

@@ -1,16 +1,10 @@
-<div #sideBarMenu [ngClass]="sideMenuClasses">
+<div [ngClass]="sideMenuClasses">
   <ul class="sideMenuNav">
     <li class="sideMenuBrand">
       <a (click)="sideMenu()">ng2Board</a>
     </li>
-    <li>
-      <a>Create board</a>
-    </li>
-    <li>
-      <a>Edit board</a>
-    </li>
-    <li>
-      <a>Delete board</a>
+    <li *ngFor="let item of menuItems">
+      <a (click)="itemClicked(item)">{{item}}</a>
     </li>
   </ul>
 </div>

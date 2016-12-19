@@ -1,4 +1,4 @@
-import { Component /*, AfterViewInit, ViewChild*/ } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,9 +6,9 @@ import { Component /*, AfterViewInit, ViewChild*/ } from '@angular/core';
   styleUrls: ['./side-menu.component.scss']
 })
 
-export class SideMenuComponent /* implements AfterViewInit */ {
-  // @ViewChild('sideBarMenu') sideBarMenu;
-
+export class SideMenuComponent {
+  @Input() menuItems: string[];
+  @Output() menuClicked = new EventEmitter<string>(); 
   sideMenuOpened: boolean = true;
   sideMenuButtonText: string = '<';
   sideMenuExpanded = 'sideMenu expanded';
@@ -16,14 +16,14 @@ export class SideMenuComponent /* implements AfterViewInit */ {
 
   sideMenuClasses: string = this.sideMenuExpanded;
 
-  // ngAfterViewInit() {
-  //   this.sideBarMenu.nativeElement.style.left = '0';
-  // }
-
   sideMenu() {
     this.sideMenuClasses = this.sideMenuOpened ? this.sideMenuContracted : this.sideMenuExpanded;
     this.sideMenuButtonText = this.sideMenuOpened ? '>' : '<';
 
     this.sideMenuOpened = !this.sideMenuOpened;
+  }
+
+  itemClicked(item: string) {
+    this.menuClicked.emit(item);
   }
 }
