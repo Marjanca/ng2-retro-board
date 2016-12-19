@@ -49,6 +49,7 @@ $linkHoverColor: #fff;
 .sideMenuNav li a:hover {
     text-decoration: none;
     color: $linkHoverColor;
+    cursor: pointer;
 }
 
 .sideMenuNav li a:active,
