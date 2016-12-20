@@ -1,10 +1,20 @@
 <div [ngClass]="sideMenuClasses">
-  <ul class="sideMenuNav">
-    <li class="sideMenuBrand">
-      <a (click)="sideMenu()">ng2Board</a>
-    </li>
-    <li *ngFor="let item of menuItems">
-      <a (click)="itemClicked(item)">{{item}}</a>
-    </li>
-  </ul>
+  <div>
+    <ul class="sideMenuNav">
+      <li class="sideMenuBrand">
+        <a (click)="sideMenu()">ng2Board</a>
+      </li>
+      <li *ngFor="let item of menuItems">
+        <a (click)="itemClicked(item)">{{item}}</a>
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <div class="sideMenuDynamicItems">
+    <ul class="sideMenuNav">
+      <li *ngFor="let item of otherItems">
+        <a (click)="itemClicked(item)">{{item}}</a>
+      </li>
+    </ul>
+  </div>
 </div>

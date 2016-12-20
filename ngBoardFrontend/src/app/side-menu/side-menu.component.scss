@@ -73,3 +73,17 @@ $linkHoverColor: #fff;
     background: none;
     cursor: pointer;
 }
+
+.sideMenuDynamicItems {
+    overflow-y: auto; 
+    width: 80%; 
+    height: 40%;
+}
+
+hr {
+    width: 80%;
+}
+
+::-webkit-scrollbar {
+    display: none
+}
