@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { BoardMenuItem } from './models/boardMenuItem';
 
 @Component({
   selector: 'app-side-menu',
@@ -7,8 +8,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class SideMenuComponent {
-  @Input() boards: string[];
-  @Output() menuClicked = new EventEmitter<string>();
+  @Input() boards: BoardMenuItem[];
+  @Output() menuClicked = new EventEmitter<BoardMenuItem>();
 
   sideMenuOpened: boolean = true;
 
@@ -16,7 +17,7 @@ export class SideMenuComponent {
     this.sideMenuOpened = !this.sideMenuOpened;
   }
 
-  itemClicked(item: string) {
+  itemClicked(item: BoardMenuItem) {
     this.menuClicked.emit(item);
   }
 }

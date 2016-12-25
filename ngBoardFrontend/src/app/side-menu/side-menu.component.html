@@ -9,7 +9,7 @@
   <div class="sideMenuBoardsContainer">
     <ul class="sideMenuBoardsList">
       <li *ngFor="let board of boards">
-        <a (click)="itemClicked(board)">{{board}}</a>
+        <a (click)="itemClicked(board)">{{board.name}}</a>
       </li>
     </ul>
   </div>
