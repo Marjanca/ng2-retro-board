@@ -4,16 +4,13 @@
       <li class="sideMenuBrand">
         <a (click)="toggleSideMenu()">ng2Board</a>
       </li>
-      <li *ngFor="let item of menuItems">
-        <a (click)="itemClicked(item)">{{item}}</a>
-      </li>
     </ul>
   </div>
   <hr>
   <div class="sideMenuDynamicItems">
     <ul class="sideMenuNav">
-      <li *ngFor="let item of otherItems">
-        <a (click)="itemClicked(item)">{{item}}</a>
+      <li *ngFor="let board of boards">
+        <a (click)="itemClicked(board)">{{board}}</a>
       </li>
     </ul>
   </div>

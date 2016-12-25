@@ -7,8 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 
 export class SideMenuComponent {
-  @Input() menuItems: string[];
-  @Input() otherItems: string[];
+  @Input() boards: string[];
   @Output() menuClicked = new EventEmitter<string>();
 
   sideMenuOpened: boolean = true;

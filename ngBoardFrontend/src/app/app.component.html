@@ -1,7 +1,6 @@
 <div class="container">
   <app-side-menu 
-    [menuItems]="['Create board', 'Edit board', 'Delete board']"
-    [otherItems]="['First board', 'Second board', 'Third board', 'Fourth board', 'Fifth board', 'Sixt board', 'Seventh board', 'Eight board', 'Nineth board']"
+    [boards]="['First board', 'Second board', 'Third board', 'Fourth board', 'Fifth board', 'Sixt board', 'Seventh board', 'Eight board', 'Nineth board']"
     (menuClicked)="menuItemClicked($event)">
   </app-side-menu>
   <app-note></app-note>
