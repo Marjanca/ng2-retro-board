@@ -26,58 +26,65 @@ $linkHoverColor: #fff;
     }
 }
 
-
-.sideMenuNav {
-    top: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sideMenuNav li {
-    text-indent: 20px;
-    line-height: 40px;
-    width: 80%;
-}
-
-.sideMenuNav li a {
-    display: block;
-    text-decoration: none;
-    color: $linkColor;
-}
-
-.sideMenuNav li a:hover {
-    text-decoration: none;
-    color: $linkHoverColor;
-    cursor: pointer;
-}
-
-.sideMenuNav li a:active,
-.sideMenuNav li a:focus {
-    text-decoration: none;
-}
-
-.sideMenuNav > .sideMenuBrand {
+.sideMenuMain {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
     width: 100%;
 }
 
-.sideMenuNav > .sideMenuBrand a {
+.sideMenuMain a {
+    display: block;
     color: $brandColor;
+    padding-left: 20px;
 }
 
-.sideMenuNav > .sideMenuBrand a:hover {
+.sideMenuMain li a:active,
+.sideMenuMain li a:focus {
+    text-decoration: none;
+}
+
+.sideMenuMain a:hover {
     color: $brandHoverColor;
     background: none;
+    text-decoration: none;
     cursor: pointer;
 }
 
-.sideMenuDynamicItems {
+.sideMenuBoardsContainer {
     overflow-y: auto; 
     width: 80%; 
     height: 40%;
+}
+
+.sideMenuBoardsList {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sideMenuBoardsList li {
+    text-indent: 20px;
+    line-height: 40px;
+    width: 80%;
+}
+
+.sideMenuBoardsList li a {
+    display: block;
+    text-decoration: none;
+    color: $linkColor;
+}
+
+.sideMenuBoardsList li a:hover {
+    text-decoration: none;
+    color: $linkHoverColor;
+    cursor: pointer;
+}
+
+.sideMenuBoardsList li a:active,
+.sideMenuBoardsList li a:focus {
+    text-decoration: none;
 }
 
 hr {

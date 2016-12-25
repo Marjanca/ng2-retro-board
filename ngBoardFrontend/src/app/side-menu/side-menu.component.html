@@ -1,14 +1,10 @@
 <div [ngClass]="'sideMenu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
-  <div>
-    <ul class="sideMenuNav">
-      <li class="sideMenuBrand">
-        <a (click)="toggleSideMenu()">ng2Board</a>
-      </li>
-    </ul>
+  <div class="sideMenuMain">
+    <a (click)="toggleSideMenu()">ng2Board</a>
   </div>
   <hr>
-  <div class="sideMenuDynamicItems">
-    <ul class="sideMenuNav">
+  <div class="sideMenuBoardsContainer">
+    <ul class="sideMenuBoardsList">
       <li *ngFor="let board of boards">
         <a (click)="itemClicked(board)">{{board}}</a>
       </li>
