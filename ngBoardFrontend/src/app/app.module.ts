@@ -1,3 +1,4 @@
+import { BoardModule } from './board/board.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -16,7 +17,8 @@ import { DragNDropDirective } from './note/dragNDrop/drag-n-drop.directive';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BoardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
