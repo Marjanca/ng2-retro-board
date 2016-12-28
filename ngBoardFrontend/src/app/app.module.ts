@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
-import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
