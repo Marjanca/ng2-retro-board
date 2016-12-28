@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NoteComponent } from './note/note.component';
+import { DragNDropDirective } from './note/dragNDrop/drag-n-drop.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NoteComponent
+    NoteComponent,
+    DragNDropDirective
   ],
   imports: [
     BrowserModule,
