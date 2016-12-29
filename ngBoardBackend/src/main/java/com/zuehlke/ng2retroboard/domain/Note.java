@@ -19,7 +19,9 @@ public class Note {
     private String content;
     private int posX;
     private int posY;
-    private int votes;
+    private int positiveVotes;
+    private int negativeVotes;
+    private int zIndex;
 
     public Long getId() {
         return id;
@@ -41,9 +43,7 @@ public class Note {
         return authorId;
     }
 
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
-    }
+    public void setAuthorId(Long authorId) { this.authorId = authorId; }
 
     public String getContent() {
         return content;
@@ -69,11 +69,15 @@ public class Note {
         this.posY = posY;
     }
 
-    public int getVotes() {
-        return votes;
-    }
+    public int getPositiveVotes() { return positiveVotes; }
 
-    public void setVotes(int votes) {
-        this.votes = votes;
-    }
+    public void setPositiveVotes(int positiveVotes) { this.positiveVotes = positiveVotes; }
+
+    public int getNegativeVotes() { return negativeVotes; }
+
+    public void setNegativeVotes(int negativeVotes) { this.negativeVotes = negativeVotes; }
+
+    public int getzIndex() { return zIndex; }
+
+    public void setzIndex(int zIndex) { this.zIndex = zIndex; }
 }

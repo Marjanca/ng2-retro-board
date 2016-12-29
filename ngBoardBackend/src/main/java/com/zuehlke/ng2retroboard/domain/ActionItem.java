@@ -19,6 +19,7 @@ public class ActionItem {
     private String content;
     private int posX;
     private int posY;
+    private int zIndex;
 
     public Long getId() {
         return id;
@@ -48,9 +49,7 @@ public class ActionItem {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+    public void setContent(String content) { this.content = content; }
 
     public int getPosX() {
         return posX;
@@ -67,4 +66,8 @@ public class ActionItem {
     public void setPosY(int posY) {
         this.posY = posY;
     }
+
+    public int getzIndex() { return zIndex; }
+
+    public void setzIndex(int zIndex) { this.zIndex = zIndex; }
 }

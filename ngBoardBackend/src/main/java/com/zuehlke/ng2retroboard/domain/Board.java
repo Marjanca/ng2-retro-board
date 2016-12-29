@@ -18,6 +18,7 @@ public class Board {
     private int status;
     private Date createdDate;
     private Date closedDate;
+    private Long authorId;
 
     public Long getId() {
         return id;
@@ -58,4 +59,10 @@ public class Board {
     public void setClosedDate(Date closedDate) {
         this.closedDate = closedDate;
     }
+
+    public Long getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Long authorId) { this.authorId = authorId; }
 }
