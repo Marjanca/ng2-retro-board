@@ -17,7 +17,6 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
 }
