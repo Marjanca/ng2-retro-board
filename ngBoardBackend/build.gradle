@@ -1,0 +1,58 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+
+buildscript {
+	ext {
+		springBootVersion = '1.4.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+task buildFrontend(type:Exec) {
+	workingDir '../ngBoardFrontend'
+	if(Os.isFamily(Os.FAMILY_WINDOWS)) {
+		commandLine 'cmd', '/c', 'npm', 'install'
+	}else {
+		commandLine 'npm', 'install'
+	};
+}
+
+task copyFrontend(type: Copy) {
+	from('../ngBoardFrontend/dist')
+	into('src/main/resources/static')
+	include('*')
+}
+
+task bundle(dependsOn: ['buildFrontend', 'copyFrontend', 'jar']){
+	copyFrontend.mustRunAfter buildFrontend
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+	baseName = 'ng2-retro-board'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-data-rest')
+//	compile('org.springframework.boot:spring-boot-starter-security')
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
