@@ -30,7 +30,7 @@ export class DragNDropDirective {
 
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
-    var elem = document.querySelector("[note-id='" + data + "']");
+    var elem = <HTMLElement>document.querySelector("[note-id='" + data + "']");
 
     var tabla = document.getElementById("tabla");
 
