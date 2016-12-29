@@ -1,4 +1,6 @@
-import { Note } from './../note';
+import { NoteCoords } from './../note/note-coords';
+import { Note } from './../note/note';
+
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -29,12 +31,13 @@ describe('BoardComponent', () => {
   });
 
   let mockNotes = [
-    new Note('Everything is fine'),
-    new Note('Focus groups are great'),
-    new Note('Food can be better')
+    new Note('Everything is fine', 'John', new NoteCoords(20, 50, 1)),
+    new Note('Focus groups are great', 'Sue', new NoteCoords(120, 200, 2)),
+    new Note('Food can be better', 'Mike', new NoteCoords(300, 100, 3))
   ];
 
   it('should display notes in divs', () => {
+
     component.notes = mockNotes;
     fixture.detectChanges();
 
@@ -56,4 +59,21 @@ describe('BoardComponent', () => {
 
     expect(titleDebugElement.nativeElement.textContent).toContain('Some Board Title');
   });
+
+  it('should display each note in its position', () => {
+
+    component.notes = mockNotes;
+    fixture.detectChanges();
+
+    let noteDivs = fixture.debugElement.queryAll(By.css('div'));
+
+    noteDivs.forEach((de, index) => {
+      let note = mockNotes[index];
+
+      expect(de.nativeElement.style.top).toBe(note.coords.top);
+      expect(de.nativeElement.style.left).toBe(note.coords.left);
+      expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
+    });
+  });
+
 });

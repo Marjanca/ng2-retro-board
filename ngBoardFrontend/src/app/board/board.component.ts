@@ -1,4 +1,4 @@
-import { Note } from './../note';
+import { Note } from './../note/note';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -17,6 +17,7 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

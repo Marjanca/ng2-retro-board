@@ -1,4 +1,4 @@
 <h1>Some Board Title</h1>
-<div *ngFor="let note of notes">
+<div *ngFor="let note of notes" [style.top]="note.coords.top" [style.left]="note.coords.left" [style.zIndex]="note.coords.zIndex">
   {{note.text}}
 </div>
