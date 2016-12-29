@@ -26,9 +26,9 @@ describe('NoteComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title in a p tag', async(() => {
+  it('should render title in a div tag', async(() => {
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain(` Rendered title: 'Frank Zappa'.`);
+    expect(compiled.querySelector('div').textContent).toContain(` Rendered title: 'Frank Zappa'.`);
   }));
 
   it('should call GetNoteTitle and return title', async(() => {
