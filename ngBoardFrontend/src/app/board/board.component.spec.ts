@@ -41,7 +41,7 @@ describe('BoardComponent', () => {
     component.notes = mockNotes;
     fixture.detectChanges();
 
-    let noteDivs = fixture.debugElement.queryAll(By.css('div'));
+    let noteDivs = fixture.debugElement.queryAll(By.css('.data-test-note'));
 
     noteDivs.forEach((de, index) => {
       let divContent = de.nativeElement.textContent;
@@ -55,7 +55,7 @@ describe('BoardComponent', () => {
     component.title = 'Some Board Title';
     fixture.detectChanges();
 
-    let titleDebugElement = fixture.debugElement.query(By.css('h1'));
+    let titleDebugElement = fixture.debugElement.query(By.css('.data-test-board-title'));
 
     expect(titleDebugElement.nativeElement.textContent).toContain('Some Board Title');
   });
@@ -65,7 +65,7 @@ describe('BoardComponent', () => {
     component.notes = mockNotes;
     fixture.detectChanges();
 
-    let noteDivs = fixture.debugElement.queryAll(By.css('div'));
+    let noteDivs = fixture.debugElement.queryAll(By.css('.data-test-note'));
 
     noteDivs.forEach((de, index) => {
       let note = mockNotes[index];
