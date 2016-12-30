@@ -70,8 +70,8 @@ describe('BoardComponent', () => {
     noteDivs.forEach((de, index) => {
       let note = mockNotes[index];
 
-      expect(de.nativeElement.style.top).toBe(note.coords.top);
-      expect(de.nativeElement.style.left).toBe(note.coords.left);
+      expect(de.nativeElement.style.top).toBe(note.coords.top + 'px');
+      expect(de.nativeElement.style.left).toBe(note.coords.left + 'px');
       expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
     });
   });

@@ -1,12 +1,12 @@
 export class NoteCoords {
 
-    public top: string;
-    public left: string;
+    public top: number;
+    public left: number;
     public zIndex: number;
 
     constructor(top: number, left: number, zIndex: number) {
-        this.top = top + 'px';
-        this.left = left + 'px';
+        this.top = top;
+        this.left = left;
         this.zIndex = zIndex;
     }
 }

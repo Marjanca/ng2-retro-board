@@ -1,6 +1,6 @@
 <h1 class="data-test-board-title">Some Board Title</h1>
 <div>
-  <div class="data-test-note" *ngFor="let note of notes" [style.top]="note.coords.top" [style.left]="note.coords.left" [style.zIndex]="note.coords.zIndex">
+  <div class="data-test-note" *ngFor="let note of notes" [style.top]="note.coords.top+'px'" [style.left]="note.coords.left+'px'" [style.zIndex]="note.coords.zIndex">
     {{note.text}}
   </div>
 </div>
