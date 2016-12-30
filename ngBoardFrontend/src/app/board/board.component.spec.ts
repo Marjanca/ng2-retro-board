@@ -12,6 +12,8 @@ describe('BoardComponent', () => {
   let component: BoardComponent;
   let fixture: ComponentFixture<BoardComponent>;
 
+  let mockNotes: Note[];
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [BoardComponent]
@@ -22,6 +24,11 @@ describe('BoardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BoardComponent);
     component = fixture.componentInstance;
+    mockNotes = [
+      new Note('Everything is fine', 'John', new NoteCoords(20, 50, 1)),
+      new Note('Focus groups are great', 'Sue', new NoteCoords(120, 200, 2)),
+      new Note('Food can be better', 'Mike', new NoteCoords(300, 100, 3))
+    ];
 
     fixture.detectChanges();
   });
@@ -30,11 +37,7 @@ describe('BoardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  let mockNotes = [
-    new Note('Everything is fine', 'John', new NoteCoords(20, 50, 1)),
-    new Note('Focus groups are great', 'Sue', new NoteCoords(120, 200, 2)),
-    new Note('Food can be better', 'Mike', new NoteCoords(300, 100, 3))
-  ];
+
 
   it('should display notes in divs', () => {
 
