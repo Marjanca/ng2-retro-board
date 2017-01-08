@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SideMenuModule } from './side-menu/side-menu.module';
-import { BoardModule } from './board/board.module'; 
+import { BoardModule } from './board/board.module';
 
 import { AppComponent } from './app.component';
 
