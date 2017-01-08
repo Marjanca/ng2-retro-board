@@ -1,7 +1,3 @@
-import { NoteCoords } from '../note/models/note-coords';
-import { Note } from '../note/models/note';
-import { Board } from './models/board';
-
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -9,6 +5,10 @@ import { DebugElement } from '@angular/core';
 
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
+
+import { NoteCoords } from '../note/models/note-coords';
+import { Note } from '../note/models/note';
+import { Board } from './models/board';
 
 describe('BoardComponent', () => {
   let component: BoardComponent;
