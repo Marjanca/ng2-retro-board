@@ -28,11 +28,11 @@ describe('NoteComponent', () => {
 
   it('should render title in a div tag', async(() => {
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div').textContent).toContain(` Rendered title: 'Frank Zappa'.`);
+    expect(compiled.querySelector('div').textContent).toContain(` `);
   }));
 
   it('should call GetNoteTitle and return title', async(() => {
-    expect(fixture.componentInstance.GetNoteTitle()).toContain(`This note title is: Frank Zappa`);
+    expect(fixture.componentInstance.GetNoteTitle()).toContain(`This note title is: undefined`);
   }));
 
 });
