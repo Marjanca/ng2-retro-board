@@ -1,12 +1,12 @@
 import { Note } from './../note/note';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
 
   @Input()
   notes: Note[];
@@ -15,8 +15,4 @@ export class BoardComponent implements OnInit {
   title: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }
