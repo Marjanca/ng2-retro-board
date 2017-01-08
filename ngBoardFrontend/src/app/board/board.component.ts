@@ -1,5 +1,6 @@
-import { Note } from '../note/models/note';
 import { Component, Input } from '@angular/core';
+import { Board } from './models/board';
+
 
 @Component({
   selector: 'app-board',
@@ -7,8 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-  @Input() title: string;
-  @Input() notes: Note[];
-
-  constructor() { }
+  @Input() board: Board;
 }

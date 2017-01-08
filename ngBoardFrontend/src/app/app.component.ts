@@ -10,22 +10,42 @@ import { NoteCoords } from './note/models/note-coords';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
   private boardMenuItems: BoardMenuItem[];
   private boards: Board[] = [];
+  private activeBoard: Board;
 
   ngOnInit() {
     this.setupMockData();
-    this.boardMenuItems = this.boards.map((board) => {
-      return { id: board.Id, name: board.Title };
-    });
+
+    this.boardMenuItems = this.getBoardMenuItems();
+    this.activeBoard = this.getActiveBoard();
+  }
+
+  getBoardMenuItems(): BoardMenuItem[] {
+    return this.boards.map((board) => {
+        return { id: board.Id, name: board.Title };
+      });
+  }
+
+  getActiveBoard(): Board {
+    if (!this.activeBoard) {
+      return this.boards[0];
+    }
+  }
+
+  setActiveBoard(boardId: number) {
+    this.activeBoard =  this.getBoard(boardId);
+  }
+
+  getBoard(boardId: number) {
+    return this.boards.find((board) => board.Id === boardId);
   }
 
   menuItemClicked(item: BoardMenuItem) {
-    console.log(item);
+    this.setActiveBoard(item.id);
   }
 
-  setupMockData() {
+  private setupMockData() {
     let firstBoardNotes = [
        {text: 'first note', author: 'first author', coords: new NoteCoords(100, 100, 0)},
        {text: 'second note', author: 'second author', coords: new NoteCoords(200, 200, 0)},

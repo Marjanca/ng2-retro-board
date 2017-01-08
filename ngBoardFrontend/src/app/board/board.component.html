@@ -1,6 +1,6 @@
-<h1 class="data-test-board-title">{{title}}</h1>
+<h1 class="data-test-board-title pull-right">{{board.title}}</h1>
 <div id="tabla" class="tabla" appDragNDrop>
-  <app-note *ngFor="let note of notes"
+  <app-note *ngFor="let note of board.notes"
     [note]="note">
   </app-note>
 </div>

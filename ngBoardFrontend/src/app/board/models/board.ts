@@ -16,6 +16,10 @@ export class Board {
         this.notes = notes;
     }
 
+    get Notes() {
+        return this.notes;
+    }
+
     get Id() {
         return this.id;
     }
