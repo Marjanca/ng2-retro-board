@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardMenuItem } from './side-menu/models/boardMenuItem';
+import { Note } from './note/models/note';
+import { NoteCoords } from './note/models/note-coords';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,7 @@ import { BoardMenuItem } from './side-menu/models/boardMenuItem';
 export class AppComponent implements OnInit {
 
   private boards: BoardMenuItem[];
+  private activeBoardNotes: Note[];
 
   ngOnInit() {
     this.boards = [
@@ -16,6 +19,12 @@ export class AppComponent implements OnInit {
       {id: 2, name: 'Second'},
       {id: 3, name: 'Third'}
     ];
+
+    this.activeBoardNotes = [
+      {text: 'first note', author: 'first author', coords: new NoteCoords(0, 0, 0)},
+      {text: 'second note', author: 'second author', coords: new NoteCoords(20, 20, 0)},
+      {text: 'third note', author: 'third author', coords: new NoteCoords(40, 40, 0)},
+    ]
   }
 
   menuItemClicked(item: BoardMenuItem) {
