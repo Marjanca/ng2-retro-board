@@ -1,9 +1,6 @@
 <h1 class="data-test-board-title">{{title}}</h1>
-<div id="tabla" appDragNDrop>
+<div id="tabla" appDragNDrop style="height: 400px;background:#ddd">
   <app-note class="data-test-note" *ngFor="let note of notes"
-    [title]="note.text" 
-    [style.top]="note.coords.top+'px'" 
-    [style.left]="note.coords.left+'px'" 
-    [style.zIndex]="note.coords.zIndex">
+    [title]="note.text">
   </app-note>
 </div>
