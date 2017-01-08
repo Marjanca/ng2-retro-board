@@ -10,19 +10,14 @@ export class DragNDropDirective {
     renderer.setElementAttribute(el.nativeElement, 'note-id', (DragNDropDirective.noteIdGen++).toString());
   }
   @HostListener('dragover', ['$event']) onDragOver(ev) {
-    console.log('allow drop');
     ev.preventDefault();
   };
 
   @HostListener('dragstart', ['$event']) onDragStart(ev) {
-    console.log('drag');
-
     ev.dataTransfer.setData('text/plain', ev.target.attributes['note-id'].nodeValue);
   };
 
   @HostListener('drop', ['$event']) onDrop(ev) {
-    console.log('drop');
-
     ev.preventDefault();
     let data = ev.dataTransfer.getData('text');
     let elem = <HTMLElement>document.querySelector('[note-id="' + data + '"]');

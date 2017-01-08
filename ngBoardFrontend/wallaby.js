@@ -30,7 +30,9 @@ module.exports = function (wallaby) {
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*.scss', load: false},
       {pattern: 'src/**/*.html', load: false},
-      {pattern: 'src/**/*spec.ts', ignore: true}
+      {pattern: 'src/**/*spec.ts', ignore: true},
+      {pattern: 'src/main.ts', ignore: true},
+      {pattern: 'src/test.ts', ignore: true}
     ],
 
     tests: [
