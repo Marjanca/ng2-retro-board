@@ -7,12 +7,9 @@ import { BoardModule } from './board/board.module';
 
 import { AppComponent } from './app.component';
 
-import { DragNDropDirective } from './note/dragNDrop/drag-n-drop.directive';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    DragNDropDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
