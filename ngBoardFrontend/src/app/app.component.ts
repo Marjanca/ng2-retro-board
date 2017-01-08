@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardMenuItem } from './side-menu/models/boardMenuItem';
 import { Board } from './board/models/board';
-import { Note } from './note/models/note';
 import { NoteCoords } from './note/models/note-coords';
 
 @Component({
