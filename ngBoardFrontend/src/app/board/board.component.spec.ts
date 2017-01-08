@@ -1,5 +1,6 @@
 import { NoteCoords } from '../note/models/note-coords';
 import { Note } from '../note/models/note';
+import { Board } from './models/board';
 
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -13,6 +14,7 @@ describe('BoardComponent', () => {
   let component: BoardComponent;
   let fixture: ComponentFixture<BoardComponent>;
 
+  let mockBoard: Board;
   let mockNotes: Note[];
 
   beforeEach(async(() => {
@@ -28,11 +30,17 @@ describe('BoardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(BoardComponent);
     component = fixture.componentInstance;
+
     mockNotes = [
       new Note('Everything is fine', 'John', new NoteCoords(20, 50, 1)),
       new Note('Focus groups are great', 'Sue', new NoteCoords(120, 200, 2)),
       new Note('Food can be better', 'Mike', new NoteCoords(300, 100, 3))
     ];
+
+    mockBoard = new Board(1, 'test board', 'test creator');
+    mockBoard.Notes = mockNotes;
+
+    component.board = mockBoard;
 
     fixture.detectChanges();
   });
@@ -42,10 +50,7 @@ describe('BoardComponent', () => {
   });
 
 
-
   it('should display notes in divs', () => {
-
-    component.notes = mockNotes;
     fixture.detectChanges();
 
     let noteDivs = fixture.debugElement.queryAll(By.css('.data-test-note'));
@@ -59,17 +64,14 @@ describe('BoardComponent', () => {
   });
 
   it('should display a title in h1', () => {
-    component.title = 'Some Board Title';
     fixture.detectChanges();
 
     let titleDebugElement = fixture.debugElement.query(By.css('.data-test-board-title'));
 
-    expect(titleDebugElement.nativeElement.textContent).toContain('Some Board Title');
+    expect(titleDebugElement.nativeElement.innerText).toContain('test board');
   });
 
   it('should display each note in its position', () => {
-
-    component.notes = mockNotes;
     fixture.detectChanges();
 
     let noteDivs = fixture.debugElement.queryAll(By.css('.data-test-note'));
@@ -82,5 +84,4 @@ describe('BoardComponent', () => {
       expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
     });
   });
-
 });
