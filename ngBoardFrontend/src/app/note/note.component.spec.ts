@@ -4,10 +4,13 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { NoteComponent } from './note.component';
+import { Note } from './models/note';
+import { NoteCoords } from './models/note-coords';
 
 describe('NoteComponent', () => {
   let component: NoteComponent;
   let fixture: ComponentFixture<NoteComponent>;
+  let note: Note;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,6 +22,7 @@ describe('NoteComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NoteComponent);
     component = fixture.componentInstance;
+    component.note = new Note('text', 'author', new NoteCoords(0, 0, 0));
     fixture.detectChanges();
   });
 
@@ -28,11 +32,6 @@ describe('NoteComponent', () => {
 
   it('should render title in a div tag', async(() => {
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div').textContent).toContain(` `);
+    expect(compiled.querySelector('div').innerText).toBe('text');
   }));
-
-  it('should call GetNoteTitle and return title', async(() => {
-    expect(fixture.componentInstance.GetNoteTitle()).toContain(`This note title is: undefined`);
-  }));
-
 });
