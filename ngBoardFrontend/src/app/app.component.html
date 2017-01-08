@@ -1,5 +1,7 @@
 <div>
-  <app-side-menu [boards]="boards">
+  <app-side-menu 
+    [boards]="boards"
+    (menuClicked)="menuItemClicked($event)">
   </app-side-menu>
   <app-board 
     [title]="'test board titl'"
