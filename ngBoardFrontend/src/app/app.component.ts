@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
     this.activeBoardNotes = [
       {text: 'first note', author: 'first author', coords: new NoteCoords(0, 0, 0)},
       {text: 'second note', author: 'second author', coords: new NoteCoords(20, 20, 0)},
-      {text: 'third note', author: 'third author', coords: new NoteCoords(40, 40, 0)},
-    ]
+      {text: 'third note', author: 'third author', coords: new NoteCoords(40, 40, 0)}
+    ];
   }
 
   menuItemClicked(item: BoardMenuItem) {
