@@ -1,4 +1,4 @@
-import { Note } from './../note/note';
+import { Note } from '../note/models/note';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,12 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-
-  @Input()
-  notes: Note[];
-
-  @Input()
-  title: string;
+  @Input() title: string;
+  @Input() notes: Note[];
 
   constructor() { }
 }
