@@ -1,0 +1,16 @@
+<div [ngClass]="'sideMenu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
+  <div class="row sideMenuMain">
+    <a (click)="toggleSideMenu()">ng2Board</a>
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search" id="searchTerm">
+    </div>
+  </div>
+  <hr>
+  <div class="sideMenuBoardsContainer">
+    <ul class="sideMenuBoardsList">
+      <li *ngFor="let board of boards">
+        <a (click)="itemClicked(board)">{{board.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -20,7 +20,9 @@
     "@angular/platform-browser": "2.2.1",
     "@angular/platform-browser-dynamic": "2.2.1",
     "@angular/router": "3.2.1",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "ng2-bootstrap": "^1.1.16",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "wallaby-webpack": "0.0.26",
@@ -44,7 +46,7 @@
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5",
-	"sass": "^0.5.0",
+    "sass": "^0.5.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1"
   }
