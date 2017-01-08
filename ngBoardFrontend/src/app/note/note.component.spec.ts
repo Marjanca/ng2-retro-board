@@ -22,7 +22,7 @@ describe('NoteComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NoteComponent);
     component = fixture.componentInstance;
-    component.note = new Note('text', 'author', new NoteCoords(0, 0, 0));
+    component.note = new Note('text', 'author', new NoteCoords(12, 17, 1));
     fixture.detectChanges();
   });
 
@@ -30,8 +30,15 @@ describe('NoteComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render title in a div tag', async(() => {
+  it('should render text of the note', async(() => {
     let compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('div').innerText).toBe('text');
+  }));
+
+  it('should render note in a specific position', async(() => {
+    let noteElement = fixture.debugElement.query(By.css('.data-test-note'));
+    expect(noteElement.nativeElement.style.top).toBe(12 + 'px');
+    expect(noteElement.nativeElement.style.left).toBe(17 + 'px');
+    expect(noteElement.nativeElement.style.zIndex).toBe('1');
   }));
 });
