@@ -1,7 +1,9 @@
-<div class="container" id="tabla" appDragNDrop style="height: 400px;background:#ddd">
-  <app-side-menu [boards] = "boards">
+<div>
+  <app-side-menu 
+    [boards]="boardMenuItems"
+    (menuClicked)="menuItemClicked($event)">
   </app-side-menu>
-  <app-note></app-note>
-  <app-note></app-note>
-  <app-note></app-note>
+  <app-board 
+    [board]="activeBoard">
+  </app-board>
 </div>

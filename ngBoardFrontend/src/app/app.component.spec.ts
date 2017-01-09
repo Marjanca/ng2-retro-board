@@ -5,13 +5,18 @@ import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NoteComponent } from './note/note.component';
 
+import { BoardModule } from './board/board.module';
+
+
 describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        NoteComponent,
         SideMenuComponent
+      ],
+      imports: [
+        BoardModule
       ]
     });
   });
