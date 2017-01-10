@@ -1,8 +1,8 @@
 <form>
-  <div #modal id="addNoteModal" (click)="checkForClosing($event.target)" class="modal">
+  <div #modal (click)="checkForClosing($event.target)" class="data-test-modal-div modal">
     <div class="modal-content">
       <div class="modal-header">
-        <span (click)="closeModal()" class="close">&times;</span>
+        <span (click)="closeModal()" class="data-test-close-button close">&times;</span>
         <h2>Add note</h2>
       </div>
       <div class="modal-body">
