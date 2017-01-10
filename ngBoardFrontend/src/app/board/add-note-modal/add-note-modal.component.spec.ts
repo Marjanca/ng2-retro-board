@@ -38,7 +38,6 @@ describe('AddNoteModalComponent', () => {
 
     let expectedNote = new Note('some text', 'some author', new NoteCoords(100, 200, 1));
     component.note = expectedNote;
-    
     let postButton = fixture.debugElement.query(By.css('.data-test-post-button'));
     postButton.triggerEventHandler('click', null);
 

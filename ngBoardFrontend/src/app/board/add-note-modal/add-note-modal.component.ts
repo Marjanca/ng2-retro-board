@@ -1,6 +1,5 @@
-import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-note-modal',
@@ -19,7 +18,7 @@ export class AddNoteModalComponent {
   constructor() { }
 
   private clearTextArea() {
-    //this.textArea.nativeElement.value = '';
+    // this.textArea.nativeElement.value = '';
     this.note = new Note();
   }
 
@@ -39,12 +38,12 @@ export class AddNoteModalComponent {
   }
 
   createNote() {
-    
+
     if (this.note.text.length === 0) {
       return;
     }
 
-    //let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
+    // let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
     this.onNoteCreated.emit(this.note);
 
     this.closeModal();

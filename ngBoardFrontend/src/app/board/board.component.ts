@@ -1,5 +1,5 @@
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
-import { Component, Input, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { Board } from './models/board';
 
 
