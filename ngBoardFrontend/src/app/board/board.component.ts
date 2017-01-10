@@ -1,3 +1,4 @@
+import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { Board } from './models/board';
 
@@ -9,27 +10,9 @@ import { Board } from './models/board';
 })
 export class BoardComponent {
   @Input() board: Board;
+  @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
 
-  @ViewChild('modal') modal: ElementRef;
-  @ViewChild('textarea') textArea: ElementRef;
-
-  private clearTextArea() {
-    this.textArea.nativeElement.value = '';
+  openAddNoteModal() {
+    this.addNoteModal.openModal();
   }
-
-  openDialog() {
-    this.modal.nativeElement.style.display = 'block';
-  }
-
-  closeDialog() {
-    this.clearTextArea();
-    this.modal.nativeElement.style.display = 'none';
-  }
-
-  checkForClosing(targetElement) {
-    if(targetElement === this.modal.nativeElement) {
-      this.closeDialog();
-    }
-  }
-
 }

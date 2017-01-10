@@ -1,3 +1,4 @@
+import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BoardComponent } from './board.component';
@@ -11,7 +12,8 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
   declarations: [
     BoardComponent,
     NoteComponent,
-    DragNDropDirective
+    DragNDropDirective,
+    AddNoteModalComponent
   ],
   exports: [
     BoardComponent,
