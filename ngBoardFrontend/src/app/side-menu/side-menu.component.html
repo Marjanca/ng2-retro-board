@@ -1,14 +1,14 @@
-<div [ngClass]="'sideMenu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
-  <div class="row sideMenuMain">
+<div [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
+  <div class="row side-menu-main">
     <a (click)="toggleSideMenu()">ng2Board</a>
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search" id="searchTerm">
+      <input type="text" class="form-control" placeholder="Search" id="search-term">
     </div>
   </div>
   <br>
   <br>
-  <div class="sideMenuBoardsContainer">
-    <ul class="sideMenuBoardsList">
+  <div class="side-menu-boards-container">
+    <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
         <a (click)="itemClicked(board)">{{board.name}}</a>
       </li>

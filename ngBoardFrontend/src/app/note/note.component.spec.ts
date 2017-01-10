@@ -32,7 +32,8 @@ describe('NoteComponent', () => {
 
   it('should render text of the note', async(() => {
     let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('div').innerText).toBe('text');
+    expect(compiled.querySelector('div').innerText).toContain('text');
+    expect(compiled.querySelector('div').innerText).toContain('author');
   }));
 
   it('should render note in a specific position', async(() => {

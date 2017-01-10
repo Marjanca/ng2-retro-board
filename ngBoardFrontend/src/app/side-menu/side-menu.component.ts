@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { BoardMenuItem } from './models/boardMenuItem';
+import { BoardMenuItem } from './models/board-menu-item';
 
 @Component({
   selector: 'app-side-menu',

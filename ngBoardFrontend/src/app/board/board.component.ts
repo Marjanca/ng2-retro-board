@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Board } from './models/board';
 
-
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
