@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonsModule } from 'ng2-bootstrap';
 
 import { SideMenuComponent } from './side-menu.component';
 
