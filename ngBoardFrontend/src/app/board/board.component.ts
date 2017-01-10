@@ -15,4 +15,9 @@ export class BoardComponent {
   openAddNoteModal() {
     this.addNoteModal.openModal();
   }
+
+  onNoteCreated(note) {
+    this.board.Notes.push(note);
+    console.dir(note);
+  }
 }

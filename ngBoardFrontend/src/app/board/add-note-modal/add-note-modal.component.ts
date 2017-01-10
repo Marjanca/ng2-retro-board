@@ -43,8 +43,10 @@ export class AddNoteModalComponent {
       return;
     }
 
-    let note = new Note(noteText, '<none>', new NoteCoords(0, 0, 1));
+    let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
     this.onNoteCreated.emit(note);
+
+    this.closeModal();
   }
 
 }
