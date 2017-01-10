@@ -97,7 +97,7 @@ describe('BoardComponent', () => {
 
     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
     addNoteButton.triggerEventHandler('click', null);
- 
+
     expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');
   });
 });

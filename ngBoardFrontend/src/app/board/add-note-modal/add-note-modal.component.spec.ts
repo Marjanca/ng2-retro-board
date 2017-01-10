@@ -55,7 +55,7 @@ describe('AddNoteModalComponent', () => {
 
     expect(modalDiv.nativeElement.style.display).toBe('none');
   });
-  
+
   it('should close modal when is clicked outside of it', () => {
     let modalDiv = fixture.debugElement.query(By.css('.data-test-modal-div'));
     modalDiv.nativeElement.style.display = 'block';
