@@ -8,7 +8,6 @@ import { SideMenuComponent } from './side-menu.component';
     SideMenuComponent
   ],
   imports: [
-    ButtonsModule,
     CommonModule
   ],
   exports: [
