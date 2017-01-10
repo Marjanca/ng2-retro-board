@@ -5,12 +5,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './add-note-modal.component.html',
   styleUrls: ['./add-note-modal.component.scss']
 })
-export class AddNoteModalComponent implements OnInit {
+export class AddNoteModalComponent {
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
   @ViewChild('modal') modal: ElementRef;
   @ViewChild('textarea') textArea: ElementRef;
