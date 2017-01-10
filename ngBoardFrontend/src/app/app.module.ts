@@ -6,10 +6,12 @@ import { SideMenuModule } from './side-menu/side-menu.module';
 import { BoardModule } from './board/board.module';
 
 import { AppComponent } from './app.component';
+import { AddNoteModalComponent } from './board/add-note-modal/add-note-modal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddNoteModalComponent
   ],
   imports: [
     BrowserModule,
