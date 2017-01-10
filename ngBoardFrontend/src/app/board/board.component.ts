@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { Board } from './models/board';
 
 
@@ -9,4 +9,27 @@ import { Board } from './models/board';
 })
 export class BoardComponent {
   @Input() board: Board;
+
+  @ViewChild('modal') modal: ElementRef;
+  @ViewChild('textarea') textArea: ElementRef;
+
+  private clearTextArea() {
+    this.textArea.nativeElement.value = '';
+  }
+
+  openDialog() {
+    this.modal.nativeElement.style.display = 'block';
+  }
+
+  closeDialog() {
+    this.clearTextArea();
+    this.modal.nativeElement.style.display = 'none';
+  }
+
+  checkForClosing(targetElement) {
+    if(targetElement === this.modal.nativeElement) {
+      this.closeDialog();
+    }
+  }
+
 }
