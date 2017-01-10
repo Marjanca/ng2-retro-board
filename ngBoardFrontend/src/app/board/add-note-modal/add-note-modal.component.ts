@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { NoteCoords } from './../../note/models/note-coords';
+import { Note } from './../../note/models/note';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-note-modal',
@@ -6,6 +8,9 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./add-note-modal.component.scss']
 })
 export class AddNoteModalComponent {
+
+  @Output()
+  onNoteCreated = new EventEmitter<Note>();
 
   constructor() { }
 
@@ -29,6 +34,17 @@ export class AddNoteModalComponent {
     if (targetElement === this.modal.nativeElement) {
       this.closeModal();
     }
+  }
+
+  createNote() {
+    let noteText: string = this.textArea.nativeElement.value;
+
+    if (noteText.length === 0) {
+      return;
+    }
+
+    let note = new Note(noteText, '<none>', new NoteCoords(0, 0, 1));
+    this.onNoteCreated.emit(note);
   }
 
 }
