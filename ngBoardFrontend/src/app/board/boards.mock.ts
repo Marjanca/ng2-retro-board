@@ -1,5 +1,5 @@
 import { NoteCoords } from '../note/models/note-coords';
-import { Note } from '../note/models/note'
+import { Note } from '../note/models/note';
 import { Board } from './models/board';
 
 const notes1 = [
@@ -9,8 +9,8 @@ const notes1 = [
 
 const notes2 = [
     new Note('Do. Or do not. There is no try', 'Yoda', new NoteCoords(100, 1000, 1)),
-    new Note('Impressive. Most impressive. Obi-Wan has taught you well. You have controlled your fear. '+
-     'Now, release your anger. Only your hatred can destroy me.', 'Vader', new NoteCoords(200, 500, 1))
+    new Note('Impressive. Most impressive. Obi-Wan has taught you well. You have controlled your fear. ' +
+        'Now, release your anger. Only your hatred can destroy me.', 'Vader', new NoteCoords(200, 500, 1))
 ];
 
 const board1 = new Board(1, 'January 2017', 'Sale');

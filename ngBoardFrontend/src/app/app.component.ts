@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardMenuItem } from './side-menu/models/board-menu-item';
-import { Board } from './board/models/board';
-import { NoteCoords } from './note/models/note-coords';
 import { BoardService } from './board/board.service';
 
 @Component({
