@@ -90,4 +90,14 @@ describe('BoardComponent', () => {
       expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
     });
   });
+
+  it('should show add note modal when Add note button is clicked', () => {
+    // Make sure modal is hidden
+    component.addNoteModal.modal.nativeElement.style.display = 'none';
+
+    let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
+    addNoteButton.triggerEventHandler('click', null);
+ 
+    expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');
+  });
 });
