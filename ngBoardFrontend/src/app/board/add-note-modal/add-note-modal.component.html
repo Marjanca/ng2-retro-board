@@ -1,15 +1,16 @@
-<div #modal id="addNoteModal" (click)="checkForClosing($event.target)" class="modal">
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span (click)="closeModal()" class="close">&times;</span>
-      <h2>Add note</h2>
-    </div>
-    <div class="modal-body">
-      <textarea #textarea placeholder="Place your note here..."></textarea>
-    </div>
-    <div class="modal-footer">
-      <button (click)="createNote()">Post</button>
+<form>
+  <div #modal id="addNoteModal" (click)="checkForClosing($event.target)" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span (click)="closeModal()" class="close">&times;</span>
+        <h2>Add note</h2>
+      </div>
+      <div class="modal-body">
+        <textarea #textarea [(ngModel)]="note.text" name="textarea" placeholder="Place your note here..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="data-test-post-button" (click)="createNote()">Post</button>
+      </div>
     </div>
   </div>
-</div>
+</form>

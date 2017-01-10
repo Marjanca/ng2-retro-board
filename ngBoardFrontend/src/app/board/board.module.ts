@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,8 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
     BoardComponent,

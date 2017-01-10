@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -20,6 +21,9 @@ describe('BoardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule
+      ],
       declarations: [
         AddNoteModalComponent,
         BoardComponent,

@@ -9,16 +9,18 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '
 })
 export class AddNoteModalComponent {
 
-  @Output()
-  onNoteCreated = new EventEmitter<Note>();
-
-  constructor() { }
-
   @ViewChild('modal') modal: ElementRef;
   @ViewChild('textarea') textArea: ElementRef;
 
+  @Output() onNoteCreated = new EventEmitter<Note>();
+
+  note: Note = new Note();
+
+  constructor() { }
+
   private clearTextArea() {
-    this.textArea.nativeElement.value = '';
+    //this.textArea.nativeElement.value = '';
+    this.note = new Note();
   }
 
   openModal() {
@@ -37,14 +39,13 @@ export class AddNoteModalComponent {
   }
 
   createNote() {
-    let noteText: string = this.textArea.nativeElement.value;
-
-    if (noteText.length === 0) {
+    
+    if (this.note.text.length === 0) {
       return;
     }
 
-    let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
-    this.onNoteCreated.emit(note);
+    //let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
+    this.onNoteCreated.emit(this.note);
 
     this.closeModal();
   }
