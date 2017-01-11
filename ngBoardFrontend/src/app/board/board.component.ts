@@ -16,7 +16,6 @@ export class BoardComponent {
   }
 
   onNoteCreated(note) {
-    this.board.Notes.push(note);
-    console.dir(note);
+    this.board.getNotes().push(note);
   }
 }
