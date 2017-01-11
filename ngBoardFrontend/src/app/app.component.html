@@ -1,9 +1,4 @@
 <div>
-  <app-side-menu 
-    [boards]="boardMenuItems"
-    (menuClicked)="menuItemClicked($event)">
-  </app-side-menu>
-  <app-board 
-    [board]="activeBoard">
-  </app-board>
+  <app-side-menu [boards]="getBoardMenuItems()" (menuClicked)="menuItemClicked($event)"></app-side-menu>
+  <app-board [board]="boardService.getSelectedBoard()"></app-board>
 </div>

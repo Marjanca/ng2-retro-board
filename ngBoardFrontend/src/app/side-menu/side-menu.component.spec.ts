@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { SideMenuComponent } from './side-menu.component';
 
-import { BoardMenuItem } from './models/boardMenuItem';
+import { BoardMenuItem } from './models/board-menu-item';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -36,7 +36,7 @@ describe('SideMenuComponent', () => {
   });
 
   it('should show three board menu items', () => {
-    let menuitems = fixture.debugElement.queryAll(By.css('.sideMenuBoardsList li'));
+    let menuitems = fixture.debugElement.queryAll(By.css('.side-menu-boards-list li'));
     expect(menuitems.length).toBe(3);
   });
 
@@ -56,7 +56,7 @@ describe('SideMenuComponent', () => {
     spyOn(component.menuClicked, 'emit');
 
     let nativeElement = fixture.nativeElement;
-    let button = nativeElement.querySelector('.sideMenuBoardsList li a');
+    let button = nativeElement.querySelector('.side-menu-boards-list li a');
     button.dispatchEvent(new Event('click'));
 
     fixture.detectChanges();

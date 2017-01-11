@@ -1,30 +1,17 @@
 import { Note } from '../../note/models/note';
 
 export class Board {
-    private id: number;
-    private title: string;
     private notes: Note[];
-    private creator: string;
 
-    constructor(id: number, title: string, creator: string) {
-        this.id = id;
-        this.title = title;
-        this.creator = creator;
-    }
+    constructor(private id: number, private title: string, private creator: string) {}
 
-    set Notes(notes: Note[]) {
+    setNotes(notes: Note[]) {
         this.notes = notes;
     }
 
-    get Notes() {
-        return this.notes;
-    }
+    getNotes = () => this.notes;
 
-    get Id() {
-        return this.id;
-    }
+    getId = () => this.id;
 
-    get Title() {
-        return this.title;
-    }
+    getTitle = () => this.title;
 }

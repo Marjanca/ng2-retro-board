@@ -22,13 +22,13 @@ export class DragNDropDirective {
     let data = ev.dataTransfer.getData('text');
     let elem = <HTMLElement>document.querySelector('[note-id="' + data + '"]');
 
-    let tabla = document.getElementById('tabla');
+    let table = document.getElementById('table');
 
     // var kockicaRect = elem.getBoundingClientRect();
-    let tablaRect = tabla.getBoundingClientRect();
+    let tableRect = table.getBoundingClientRect();
 
-    elem.style.left = (ev.pageX - tablaRect.left).toString() + 'px';
-    elem.style.top = (ev.pageY - tablaRect.top).toString() + 'px';
+    elem.style.left = (ev.pageX - tableRect.left).toString() + 'px';
+    elem.style.top = (ev.pageY - tableRect.top).toString() + 'px';
     elem.style.zIndex = '10000';
   };
 }

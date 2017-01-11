@@ -5,7 +5,7 @@ $brandHoverColor: #fff;
 $linkColor: #999999;
 $linkHoverColor: #fff;
 
-.sideMenu {
+.side-menu {
     height: 800px;
     width: $menuWidth;
     position: absolute;
@@ -24,68 +24,70 @@ $linkHoverColor: #fff;
     &.contracted {
         left: -$menuWidth + 20px;
     }
+
+    .side-menu-main {
+        height: 65px;
+        font-size: 18px;
+        line-height: 60px;
+        width: 100%;
+        padding-left: 30px;
+
+        a {
+            display: block;
+            color: $brandColor;
+
+            &:active, &:focus {
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $brandHoverColor;
+                background: none;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .side-menu-boards-container {
+        overflow-y: auto; 
+        width: 80%; 
+        height: 40%;
+
+        .side-menu-boards-list {
+            top: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                text-indent: 20px;
+                line-height: 40px;
+                width: 80%;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+                    color: $linkColor;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: $linkHoverColor;
+                        cursor: pointer;
+                    }
+
+                    &:active, &:focus {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
-.sideMenuMain {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-    width: 100%;
-    padding-left: 30px;
-}
 
-.sideMenuMain a {
-    display: block;
-    color: $brandColor;
-}
 
-.sideMenuMain li a:active,
-.sideMenuMain li a:focus {
-    text-decoration: none;
-}
 
-.sideMenuMain a:hover {
-    color: $brandHoverColor;
-    background: none;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.sideMenuBoardsContainer {
-    overflow-y: auto; 
-    width: 80%; 
-    height: 40%;
-}
-
-.sideMenuBoardsList {
-    top: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sideMenuBoardsList li {
-    text-indent: 20px;
-    line-height: 40px;
-    width: 80%;
-}
-
-.sideMenuBoardsList li a {
-    display: block;
-    text-decoration: none;
-    color: $linkColor;
-}
-
-.sideMenuBoardsList li a:hover {
-    text-decoration: none;
-    color: $linkHoverColor;
-    cursor: pointer;
-}
-
-.sideMenuBoardsList li a:active,
-.sideMenuBoardsList li a:focus {
-    text-decoration: none;
-}
 
 hr {
     width: 80%;

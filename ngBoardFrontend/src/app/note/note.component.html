@@ -4,5 +4,6 @@
   [style.left]="note.coords.left +'px'"
   [style.zIndex]="note.coords.zIndex" 
   appDragNDrop>
-  {{note.text}}
+  <div class="note-text">{{note.text}}</div>
+  <div class="note-author">{{note.author}}</div>
 </div>

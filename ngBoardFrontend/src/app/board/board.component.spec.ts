@@ -44,7 +44,7 @@ describe('BoardComponent', () => {
     ];
 
     mockBoard = new Board(1, 'test board', 'test creator');
-    mockBoard.Notes = mockNotes;
+    mockBoard.setNotes(mockNotes);
 
     component.board = mockBoard;
 
