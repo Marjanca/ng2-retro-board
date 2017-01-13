@@ -18,8 +18,14 @@ Follow these steps to install and start the app:
 - app is now running on <code>http://localhost:4200</code>
 
 **Backend:**
-Backend side is built using Gradle. You have to run:
+Backend side is built using Gradle. The project will be built using:
 
 <code>gradle build</code>
+
+To run the application, type:
+
+<code>gradle bootRun</code>
+
+Now you can access the backend services (probably at localhost:8080).
 
 The main class is located inside ng2-retro-board\ngBoardBackend\src\main\java\com\zuehlke\ng2retroboard\Ng2RetroBoardApplication.java
