@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BoardComponent } from './board/board.component';
 
-export const appRoutes: Routes = [
+export const routes: Routes = [
   { path: 'board/:id', component: BoardComponent }
 ];
 
-export const appRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes);

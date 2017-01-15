@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { appRouting } from './app.routes';
+import { routing } from './app.routes';
 
 import { SideMenuModule } from './side-menu/side-menu.module';
 import { BoardModule } from './board/board.module';
@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    appRouting,
+    routing,
     SideMenuModule,
     BoardModule
   ],
