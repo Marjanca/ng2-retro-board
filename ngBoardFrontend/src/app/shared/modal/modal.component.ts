@@ -1,5 +1,5 @@
 import { element } from 'protractor';
-import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -9,32 +9,37 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer } 
 export class ModalComponent implements OnInit {
 
   @Input() title: string;
-  @Output() submit: EventEmitter<any> = new EventEmitter();
+  @Output('submit') submitEvent: EventEmitter<any> = new EventEmitter();
+  @Output('close') closeEvent: EventEmitter<any> = new EventEmitter();
 
-  private modal: any;
+  @ViewChild('modal') modal: ElementRef;
 
-  constructor(private element: ElementRef, private renderer: Renderer) {
-    this.modal = element.nativeElement.querySelector('.modal');
+  constructor(private renderer: Renderer) {
   }
 
   ngOnInit() {
     this.renderer.listenGlobal('document', 'click', (event) => {
       if (event.target === this.modal) {
-        this.close();
+        this.closeModal();
       }
     });
   }
 
-  private close() {
-    this.modal.style.display = 'none';
+  private closeModal() {
+    this.modal.nativeElement.style.display = 'none';
+  }
+
+  public openModal() {
+    this.modal.nativeElement.style.display = 'block';
   }
 
   onClose() {
-    this.close();
+    this.closeEvent.emit(null);
+    this.closeModal();
   }
 
   onSubmit() {
-    this.submit.emit(null);
+    this.submitEvent.emit(null);
   }
 
 }

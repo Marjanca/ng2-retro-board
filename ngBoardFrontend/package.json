@@ -31,6 +31,7 @@
     "@angular/compiler-cli": "2.2.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
+    "@types/selenium-webdriver": "^2.53.36",
     "angular-cli": "1.0.0-beta.21",
     "codelyzer": "~1.0.0-beta.3",
     "jasmine-core": "2.5.2",
@@ -41,12 +42,12 @@
     "karma-jasmine": "^1.0.2",
     "karma-remap-istanbul": "^0.2.1",
     "protractor": "4.0.9",
+    "sass": "^0.5.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
-    "webdriver-manager": "10.2.5",
-    "sass": "^0.5.0",
-    "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1"
+    "webdriver-manager": "10.2.5"
   }
 }

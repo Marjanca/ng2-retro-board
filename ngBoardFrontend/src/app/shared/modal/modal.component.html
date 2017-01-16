@@ -1,5 +1,5 @@
 <form>
-  <div class="modal">
+  <div #modal class="modal">
     <div class="modal-content">
       <div class="modal-header">
         <span (click)="onClose()" class="close">&times;</span>
@@ -9,7 +9,7 @@
         <ng-content></ng-content>
       </div>
       <div class="modal-footer">
-        <button (click)="onSubmit()">Submit</button>
+        <button type="button" (click)="onSubmit()">Submit</button>
       </div>
     </div>
   </div>
