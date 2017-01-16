@@ -18,8 +18,8 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.renderer.listenGlobal('document', 'click', (event) => {
-      if (event.target === this.modal) {
+    this.renderer.listen(this.modal.nativeElement, 'click', (event) => {
+      if (event.target === this.modal.nativeElement) {
         this.closeModal();
       }
     });
@@ -40,6 +40,7 @@ export class ModalComponent implements OnInit {
 
   onSubmit() {
     this.submitEvent.emit(null);
+    this.closeModal();
   }
 
 }
