@@ -18,6 +18,10 @@ export class BoardService {
     this.boards = boards;
   }
 
+  getBoard(boardId: number): Board {
+    return this.boards.find((board) => board.getId() === boardId );
+  }
+
   getSelectedBoard = () => this.selectedBoard;
 
   selectBoard(boardId: number) {

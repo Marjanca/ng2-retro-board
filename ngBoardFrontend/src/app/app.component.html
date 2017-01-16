@@ -1,5 +1,5 @@
 <div>
   <app-side-menu [boards]="getBoardMenuItems()" (menuClicked)="menuItemClicked($event)"></app-side-menu>
-  <app-board [board]="boardService.getSelectedBoard()"></app-board>
-  <!--<router-outlet></router-outlet>-->
+  <!--<app-board [board]="boardService.getSelectedBoard()"></app-board>-->
+  <router-outlet></router-outlet>
 </div>
