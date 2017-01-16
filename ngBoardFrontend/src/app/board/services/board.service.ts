@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Board } from './models/board';
+import { Board } from '../models/board';
 import { MOCK_BOARDS } from './boards.mock';
 
 @Injectable()

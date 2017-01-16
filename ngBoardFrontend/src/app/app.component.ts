@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BoardMenuItem } from './side-menu/models/board-menu-item';
-import { BoardService } from './board/board.service';
+import { BoardService } from './board/services/board.service';
 
 @Component({
   selector: 'app-root',

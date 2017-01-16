@@ -1,6 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
+import { routing } from './app.routes';
 import { AppComponent } from './app.component';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 import { NoteComponent } from './note/note.component';
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
         SideMenuComponent
       ],
       imports: [
-        BoardModule
+        BoardModule,
+        routing
       ]
     });
   });

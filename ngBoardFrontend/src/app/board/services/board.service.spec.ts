@@ -2,9 +2,9 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { BoardService } from './board.service';
-import { Board } from './models/board';
-import { Note } from '../note/models/note';
-import { NoteCoords } from '../note/models/note-coords';
+import { Board } from '../models/board';
+import { Note } from '../../note/models/note';
+import { NoteCoords } from '../../note/models/note-coords';
 
 describe('BoardService', () => {
 

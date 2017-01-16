@@ -1,12 +1,13 @@
 import { FormsModule } from '@angular/forms';
-import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
+import { BoardService } from './services/board.service';
 
 import { NoteCoords } from '../note/models/note-coords';
 import { Note } from '../note/models/note';
@@ -28,7 +29,8 @@ describe('BoardComponent', () => {
         AddNoteModalComponent,
         BoardComponent,
         NoteComponent
-      ]
+      ],
+      providers: [BoardService]
     })
       .compileComponents();
   }));
@@ -45,8 +47,8 @@ describe('BoardComponent', () => {
 
     mockBoard = new Board(1, 'test board', 'test creator');
     mockBoard.setNotes(mockNotes);
-
-    component.board = mockBoard;
+    
+    component.setBoard(mockBoard);
 
     fixture.detectChanges();
   });

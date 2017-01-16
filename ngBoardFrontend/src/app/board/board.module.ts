@@ -1,4 +1,4 @@
-import { BoardService } from './board.service';
+import { BoardService } from './services/board.service';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
