@@ -14,9 +14,7 @@ export class BoardComponent implements OnInit {
   private board: Board;
   @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
 
-  constructor(private boardService: BoardService) {
-
-  }
+  constructor(private boardService: BoardService) { }
 
   ngOnInit() {
     this.board = this.boardService.getBoard(1);
