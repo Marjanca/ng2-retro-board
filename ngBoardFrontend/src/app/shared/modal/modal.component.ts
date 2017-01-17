@@ -1,4 +1,3 @@
-import { element } from 'protractor';
 import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer, ViewChild } from '@angular/core';
 
 @Component({
@@ -9,8 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, Renderer, V
 export class ModalComponent implements OnInit {
 
   @Input() title: string;
-  @Output('submit') submitEvent: EventEmitter<any> = new EventEmitter();
-  @Output('close') closeEvent: EventEmitter<any> = new EventEmitter();
+  @Output() submit: EventEmitter<any> = new EventEmitter();
+  @Output() close: EventEmitter<any> = new EventEmitter();
 
   @ViewChild('modal') modal: ElementRef;
 
@@ -34,12 +33,12 @@ export class ModalComponent implements OnInit {
   }
 
   onClose() {
-    this.closeEvent.emit(null);
+    this.close.emit(null);
     this.closeModal();
   }
 
   onSubmit() {
-    this.submitEvent.emit(null);
+    this.submit.emit(null);
     this.closeModal();
   }
 

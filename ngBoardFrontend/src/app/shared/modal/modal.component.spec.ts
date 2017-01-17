@@ -27,27 +27,27 @@ describe('ModalComponent', () => {
   });
 
   it('should emit submit event when Submit button is clicked', () => {
-    spyOn(component.submitEvent, 'emit');
+    spyOn(component.submit, 'emit');
 
-    let submitButton = fixture.debugElement.query(By.css(".data-test-submit-button"));
+    let submitButton = fixture.debugElement.query(By.css('.data-test-submit-button'));
     submitButton.triggerEventHandler('click', null);
 
-    expect(component.submitEvent.emit).toHaveBeenCalledWith(null);
+    expect(component.submit.emit).toHaveBeenCalledWith(null);
   });
 
   it('should emit close event when Close button is clicked', () => {
-    spyOn(component.closeEvent, 'emit');
+    spyOn(component.close, 'emit');
 
-    let closeButton = fixture.debugElement.query(By.css(".data-test-close-button"));
+    let closeButton = fixture.debugElement.query(By.css('.data-test-close-button'));
     closeButton.triggerEventHandler('click', null);
 
-    expect(component.closeEvent.emit).toHaveBeenCalledWith(null);
+    expect(component.close.emit).toHaveBeenCalledWith(null);
   });
 
   it('should close modal when Close button is clicked', () => {
     component.openModal();
 
-    let closeButton = fixture.debugElement.query(By.css(".data-test-close-button"));
+    let closeButton = fixture.debugElement.query(By.css('.data-test-close-button'));
     closeButton.triggerEventHandler('click', null);
 
     fixture.detectChanges();
@@ -58,7 +58,7 @@ describe('ModalComponent', () => {
   it('should close modal when Submit button is clicked', () => {
     component.openModal();
 
-    let submitButton = fixture.debugElement.query(By.css(".data-test-submit-button"));
+    let submitButton = fixture.debugElement.query(By.css('.data-test-submit-button'));
     submitButton.triggerEventHandler('click', null);
 
     fixture.detectChanges();

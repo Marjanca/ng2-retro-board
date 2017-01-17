@@ -1,5 +1,4 @@
 import { SharedModule } from './../shared/shared.module';
-import { ModalComponent } from './../shared/modal/modal.component';
 import { BoardService } from './board.service';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { FormsModule } from '@angular/forms';
