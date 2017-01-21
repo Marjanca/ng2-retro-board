@@ -10,7 +10,8 @@
   <div class="side-menu-boards-container">
     <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
-        <a (click)="itemClicked(board)">{{board.name}}</a>
+        <!--<a (click)="itemClicked(board)">{{board.name}}</a>-->
+        <a [routerLink]="['/board', board.id]">{{board.name}}</a>
       </li>
     </ul>
   </div>
