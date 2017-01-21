@@ -4,6 +4,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
@@ -33,7 +35,8 @@ describe('BoardComponent', () => {
         NoteComponent
       ],
       providers: [
-        BoardService
+        BoardService,
+        { provide: ActivatedRoute, useValue: { 'params': Observable.from([{ 'id': 1 }]) } }
       ]
     })
       .compileComponents();
@@ -44,15 +47,9 @@ describe('BoardComponent', () => {
     component = fixture.componentInstance;
 
     mockNotes = [
-      new Note('Everything is fine', 'John', new NoteCoords(20, 50, 1)),
-      new Note('Focus groups are great', 'Sue', new NoteCoords(120, 200, 2)),
-      new Note('Food can be better', 'Mike', new NoteCoords(300, 100, 3))
+      new Note('There is no spoon', 'Neo', new NoteCoords(100, 300, 1)),
+      new Note('I\'m going to make him an offer he can\'t refuse.', 'Corleone', new NoteCoords(200, 500, 1))
     ];
-
-    mockBoard = new Board(1, 'test board', 'test creator');
-    mockBoard.setNotes(mockNotes);
-
-    component.setBoard(mockBoard);
 
     fixture.detectChanges();
   });
@@ -80,7 +77,7 @@ describe('BoardComponent', () => {
 
     let titleDebugElement = fixture.debugElement.query(By.css('.data-test-board-title'));
 
-    expect(titleDebugElement.nativeElement.innerText).toContain('test board');
+    expect(titleDebugElement.nativeElement.innerText).toContain('January 2017');
   });
 
   it('should display each note in its position', () => {
