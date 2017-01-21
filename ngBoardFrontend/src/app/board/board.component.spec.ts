@@ -47,7 +47,7 @@ describe('BoardComponent', () => {
 
     mockBoard = new Board(1, 'test board', 'test creator');
     mockBoard.setNotes(mockNotes);
-    
+
     component.setBoard(mockBoard);
 
     fixture.detectChanges();
