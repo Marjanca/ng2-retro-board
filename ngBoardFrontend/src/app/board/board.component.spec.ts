@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
@@ -23,14 +24,17 @@ describe('BoardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        FormsModule
+        FormsModule,
+        RouterTestingModule
       ],
       declarations: [
         AddNoteModalComponent,
         BoardComponent,
         NoteComponent
       ],
-      providers: [BoardService]
+      providers: [
+        BoardService
+      ]
     })
       .compileComponents();
   }));
