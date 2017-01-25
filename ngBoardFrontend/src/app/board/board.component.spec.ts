@@ -1,3 +1,4 @@
+import { ModalComponent } from './../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 /* tslint:disable:no-unused-variable */
@@ -27,7 +28,8 @@ describe('BoardComponent', () => {
       declarations: [
         AddNoteModalComponent,
         BoardComponent,
-        NoteComponent
+        NoteComponent,
+        ModalComponent
       ]
     })
       .compileComponents();
@@ -92,12 +94,18 @@ describe('BoardComponent', () => {
   });
 
   it('should show add note modal when Add note button is clicked', () => {
-    // Make sure modal is hidden
-    component.addNoteModal.modal.nativeElement.style.display = 'none';
+    component.addNoteModal.modal.closeModal();
 
     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
     addNoteButton.triggerEventHandler('click', null);
 
-    expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');
+    expect(component.addNoteModal.modal.isOpened()).toBeTruthy();
+    // Make sure modal is hidden
+    /* component.addNoteModal.modal.close();
+ 
+     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
+     addNoteButton.triggerEventHandler('click', null);
+ 
+     expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');*/
   });
 });
