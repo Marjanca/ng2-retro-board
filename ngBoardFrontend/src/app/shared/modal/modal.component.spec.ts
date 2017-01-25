@@ -35,6 +35,15 @@ describe('ModalComponent', () => {
     expect(component.submit.emit).toHaveBeenCalledWith(null);
   });
 
+  it('should emit close event when Submit button is clicked', () => {
+    spyOn(component.close, 'emit');
+
+    let submitButton = fixture.debugElement.query(By.css('.data-test-submit-button'));
+    submitButton.triggerEventHandler('click', null);
+
+    expect(component.close.emit).toHaveBeenCalledWith(null);
+  });
+
   it('should emit close event when Close button is clicked', () => {
     spyOn(component.close, 'emit');
 

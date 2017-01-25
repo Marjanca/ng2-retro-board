@@ -24,20 +24,24 @@ export class ModalComponent implements OnInit {
     });
   }
 
-  private closeModal() {
+  public closeModal() {
     this.modal.nativeElement.style.display = 'none';
+    this.close.emit(null);
   }
 
   public openModal() {
     this.modal.nativeElement.style.display = 'block';
   }
 
-  onClose() {
-    this.close.emit(null);
+  public isOpened(): boolean {
+    return this.modal.nativeElement.style.display === 'block';
+  }
+
+  private onClose() {
     this.closeModal();
   }
 
-  onSubmit() {
+  private onSubmit() {
     this.submit.emit(null);
     this.closeModal();
   }
