@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { BoardService } from './board.service';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { FormsModule } from '@angular/forms';
@@ -10,7 +11,8 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   declarations: [
     BoardComponent,
