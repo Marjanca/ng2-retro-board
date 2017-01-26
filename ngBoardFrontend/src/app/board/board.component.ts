@@ -1,3 +1,4 @@
+import { Note } from './../note/models/note';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { Component, Input, ViewChild } from '@angular/core';
 import { Board } from './models/board';
@@ -15,7 +16,7 @@ export class BoardComponent {
     this.addNoteModal.openModal();
   }
 
-  onNoteCreated(note) {
+  onNoteCreated(note: Note) {
     this.board.getNotes().push(note);
   }
 }
