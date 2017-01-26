@@ -1,6 +1,7 @@
 .note{
     background-color: #EEEEA8;
-    width: 150px;
+    min-width: 150px;
+    max-width: 450px;
     word-wrap: break-word;
     position: absolute;
     resize: both;
