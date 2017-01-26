@@ -1,16 +1,3 @@
-<form>
-  <div #modal (click)="checkForClosing($event.target)" class="data-test-modal-div modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <span (click)="closeModal()" class="data-test-close-button close">&times;</span>
-        <h2>Add note</h2>
-      </div>
-      <div class="modal-body">
-        <textarea #textarea [(ngModel)]="note.text" name="textarea" placeholder="Place your note here..."></textarea>
-      </div>
-      <div class="modal-footer">
-        <button class="data-test-post-button" (click)="createNote()">Post</button>
-      </div>
-    </div>
-  </div>
-</form>
+<app-modal #modal [title]="'Add Note'" (submit)="onSubmit()" (close)="onClose()">
+  <textarea #textarea placeholder="Enter your text here..."></textarea>
+</app-modal>

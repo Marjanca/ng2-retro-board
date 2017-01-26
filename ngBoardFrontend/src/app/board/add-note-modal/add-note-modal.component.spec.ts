@@ -1,3 +1,4 @@
+import { ModalComponent } from './../../shared/modal/modal.component';
 import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,7 @@ describe('AddNoteModalComponent', () => {
       imports: [
         FormsModule
       ],
-      declarations: [AddNoteModalComponent]
+      declarations: [AddNoteModalComponent, ModalComponent]
     })
       .compileComponents();
   }));
@@ -31,49 +32,4 @@ describe('AddNoteModalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should emit onNoteCreate event when Post button is clicked ', () => {
-    let receivedNote;
-    component.onNoteCreated.subscribe(emittedNote => receivedNote = emittedNote);
-
-    let expectedNote = new Note('some text', 'some author', new NoteCoords(100, 200, 1));
-    component.note = expectedNote;
-    let postButton = fixture.debugElement.query(By.css('.data-test-post-button'));
-    postButton.triggerEventHandler('click', null);
-
-    expect(receivedNote).toBe(expectedNote);
-  });
-
-  it('should close modal when close button is clicked', () => {
-    let modalDiv = fixture.debugElement.query(By.css('.data-test-modal-div'));
-    modalDiv.nativeElement.style.display = 'block';
-
-    let closeButton = fixture.debugElement.query(By.css('.data-test-close-button'));
-    closeButton.triggerEventHandler('click', null);
-
-    fixture.detectChanges();
-
-    expect(modalDiv.nativeElement.style.display).toBe('none');
-  });
-
-  it('should close modal when is clicked outside of it', () => {
-    let modalDiv = fixture.debugElement.query(By.css('.data-test-modal-div'));
-    modalDiv.nativeElement.style.display = 'block';
-
-    let mouseClickEvent = {
-      target: modalDiv.nativeElement
-    };
-    modalDiv.triggerEventHandler('click', mouseClickEvent);
-
-    fixture.detectChanges();
-
-    expect(modalDiv.nativeElement.style.display).toBe('none');
-  });
-
-  it('should reset textarea content after closing modal', () => {
-    component.note.text = 'Some note text';
-    component.closeModal();
-    expect(component.note.text).toBe('');
-  });
-
 });
