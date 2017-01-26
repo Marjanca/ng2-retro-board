@@ -37,11 +37,11 @@ export class ModalComponent implements OnInit {
     return this.modal.nativeElement.style.display === 'block';
   }
 
-  private onClose() {
+  onClose() {
     this.closeModal();
   }
 
-  private onSubmit() {
+  onSubmit() {
     this.submit.emit(null);
     this.closeModal();
   }

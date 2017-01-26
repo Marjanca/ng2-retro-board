@@ -19,12 +19,12 @@ export class AddNoteModalComponent {
     this.modal.openModal();
   }
 
-  private onClose() {
+  onClose() {
     console.log('Add note modal closed.');
     this.textArea.nativeElement.value = '';
   }
 
-  private onSubmit() {
+  onSubmit() {
     console.log('Add note modal submited.');
     this.noteCreated.emit(new Note(this.textArea.nativeElement.value, '<anonymous>', new NoteCoords(250, 200, 10000)));
   }

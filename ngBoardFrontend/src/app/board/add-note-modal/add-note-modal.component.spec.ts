@@ -1,6 +1,4 @@
 import { ModalComponent } from './../../shared/modal/modal.component';
-import { NoteCoords } from './../../note/models/note-coords';
-import { Note } from './../../note/models/note';
 import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
