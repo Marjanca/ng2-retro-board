@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './../shared/shared.module';
-import { BoardService } from './board.service';
+import { BoardService } from './services/board.service';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
