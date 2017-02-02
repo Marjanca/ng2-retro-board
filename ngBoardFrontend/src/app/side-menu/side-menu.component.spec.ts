@@ -1,19 +1,26 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { SideMenuComponent } from './side-menu.component';
-
 import { BoardMenuItem } from './models/board-menu-item';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
   let fixture: ComponentFixture<SideMenuComponent>;
 
+  let testBoards = [
+    { id: 1, name: 'test1' },
+    { id: 2, name: 'test2' },
+    { id: 3, name: 'test3' }
+  ];
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SideMenuComponent]
+      declarations: [SideMenuComponent],
+      imports: [RouterTestingModule]
     })
       .compileComponents();
   }));
@@ -22,11 +29,7 @@ describe('SideMenuComponent', () => {
     fixture = TestBed.createComponent(SideMenuComponent);
     component = fixture.componentInstance;
 
-    component.boards = [
-      { id: 1, name: 'test1' },
-      { id: 2, name: 'test2' },
-      { id: 3, name: 'test3' }
-    ];
+    component.boards = testBoards;
 
     fixture.detectChanges();
   });
@@ -48,19 +51,19 @@ describe('SideMenuComponent', () => {
   it('should close sidemenu on when toggleSideMenu called', () => {
     component.toggleSideMenu();
     fixture.detectChanges();
-    let sideMenuExpanded = fixture.debugElement.query(By.css('.contracted'));
-    expect(sideMenuExpanded).toBeTruthy();
+    let sideMenuContracted = fixture.debugElement.query(By.css('.contracted'));
+    expect(sideMenuContracted).toBeTruthy();
   });
 
-  it('should emit menu item on menu clicked', () => {
-    spyOn(component.menuClicked, 'emit');
-
+  it('should contain correct board urls', () => {
     let nativeElement = fixture.nativeElement;
-    let button = nativeElement.querySelector('.side-menu-boards-list li a');
-    button.dispatchEvent(new Event('click'));
+    let link = nativeElement.querySelectorAll('.side-menu-boards-list li a');
 
-    fixture.detectChanges();
-
-    expect(component.menuClicked.emit).toHaveBeenCalledWith({id: 1, name: 'test1'});
+    let routePath = '/board/';
+    expect(link[0].pathname).toEqual(`${routePath}${testBoards[0].id}`);
+    expect(link[1].pathname).toEqual(`${routePath}${testBoards[1].id}`);
+    expect(link[2].pathname).toEqual(`${routePath}${testBoards[2].id}`);
+    // TODO: Mock router and assert here that it was called with correct param
+    // http://stackoverflow.com/questions/41793405/unit-testing-routerlink-in-angular2-component
   });
 });
