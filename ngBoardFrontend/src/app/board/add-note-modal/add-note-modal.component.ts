@@ -13,13 +13,13 @@ export class AddNoteModalComponent {
 
   @Output() onNoteCreated = new EventEmitter<Note>();
 
-  note: Note = new Note(0, '', '<anonymous>', 150, 250, 1);
+  note: Note = new Note(0, 0, '', '<anonymous>', 150, 250, 1);
 
   constructor() { }
 
   private clearTextArea() {
     // this.textArea.nativeElement.value = '';
-    this.note = new Note(0, '', '<anonymous>', 150, 250, 1);
+    this.note = new Note(0, 0, '', '<anonymous>', 150, 250, 1);
   }
 
   openModal() {

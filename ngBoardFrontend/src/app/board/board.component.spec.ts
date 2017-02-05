@@ -46,8 +46,8 @@ describe('BoardComponent', () => {
     component = fixture.componentInstance;
 
     mockNotes = [
-      new Note(1, 'There is no spoon', 'Neo', 100, 300, 1),
-      new Note(2, 'I\'m going to make him an offer he can\'t refuse.', 'Corleone', 200, 500, 1)
+      new Note(1, 1, 'There is no spoon', 'Neo', 100, 300, 1),
+      new Note(2, 1, 'I\'m going to make him an offer he can\'t refuse.', 'Corleone', 200, 500, 1)
     ];
 
     fixture.detectChanges();

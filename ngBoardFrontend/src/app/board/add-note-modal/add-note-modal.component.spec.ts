@@ -35,7 +35,7 @@ describe('AddNoteModalComponent', () => {
     let receivedNote;
     component.onNoteCreated.subscribe(emittedNote => receivedNote = emittedNote);
 
-    let expectedNote = new Note(1, 'some text', 'some author', 100, 200, 1);
+    let expectedNote = new Note(1, 1, 'some text', 'some author', 100, 200, 1);
     component.note = expectedNote;
     let postButton = fixture.debugElement.query(By.css('.data-test-post-button'));
     postButton.triggerEventHandler('click', null);
