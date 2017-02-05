@@ -1,5 +1,11 @@
-import { NoteCoords } from './note-coords';
-
 export class Note {
-    constructor(public text = '', public author = '<anonymous>', public coords: NoteCoords = undefined) { }
+    constructor(
+        public id,
+        public text = '',
+        public author = '<anonymous>',
+        public top: number,
+        public left: number,
+        public zIndex: number) {}
+
+    getId = () => this.id;
 }

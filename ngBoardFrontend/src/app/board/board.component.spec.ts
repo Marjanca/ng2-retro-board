@@ -12,7 +12,6 @@ import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
 import { BoardService } from './services/board.service';
 
-import { NoteCoords } from '../note/models/note-coords';
 import { Note } from '../note/models/note';
 import { Board } from './models/board';
 
@@ -47,8 +46,8 @@ describe('BoardComponent', () => {
     component = fixture.componentInstance;
 
     mockNotes = [
-      new Note('There is no spoon', 'Neo', new NoteCoords(100, 300, 1)),
-      new Note('I\'m going to make him an offer he can\'t refuse.', 'Corleone', new NoteCoords(200, 500, 1))
+      new Note(1, 'There is no spoon', 'Neo', 100, 300, 1),
+      new Note(2, 'I\'m going to make him an offer he can\'t refuse.', 'Corleone', 200, 500, 1)
     ];
 
     fixture.detectChanges();
@@ -88,9 +87,9 @@ describe('BoardComponent', () => {
     noteDivs.forEach((de, index) => {
       let note = mockNotes[index];
 
-      expect(de.nativeElement.style.top).toBe(note.coords.top + 'px');
-      expect(de.nativeElement.style.left).toBe(note.coords.left + 'px');
-      expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
+      expect(de.nativeElement.style.top).toBe(note.top + 'px');
+      expect(de.nativeElement.style.left).toBe(note.left + 'px');
+      expect(de.nativeElement.style.zIndex).toBe(note.zIndex.toString());
     });
   });
 

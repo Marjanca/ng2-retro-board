@@ -1,4 +1,3 @@
-import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
 import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
@@ -14,13 +13,13 @@ export class AddNoteModalComponent {
 
   @Output() onNoteCreated = new EventEmitter<Note>();
 
-  note: Note = new Note('', '<anonymous>', new NoteCoords(150, 250, 1));
+  note: Note = new Note(0, '', '<anonymous>', 150, 250, 1);
 
   constructor() { }
 
   private clearTextArea() {
     // this.textArea.nativeElement.value = '';
-    this.note = new Note('', '<anonymous>', new NoteCoords(150, 250, 1));
+    this.note = new Note(0, '', '<anonymous>', 150, 250, 1);
   }
 
   openModal() {
@@ -44,7 +43,6 @@ export class AddNoteModalComponent {
       return;
     }
 
-    // let note = new Note(noteText, '<none>', new NoteCoords(320, 500, 1));
     this.onNoteCreated.emit(this.note);
 
     this.closeModal();
