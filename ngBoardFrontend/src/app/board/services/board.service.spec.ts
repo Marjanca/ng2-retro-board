@@ -20,8 +20,6 @@ describe('BoardService', () => {
   it('should set all boards correctly', inject([BoardService], (service: BoardService) => {
     const boards = createDummyBoards();
     service.setBoards(boards);
-    service.selectBoard(boards[0].getId());
-     expect(service.getSelectedBoard()).toEqual(boards[0]);
   }));
 
   function createDummyBoards(): Board[] {

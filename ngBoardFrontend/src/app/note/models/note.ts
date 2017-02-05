@@ -9,4 +9,5 @@ export class Note {
         public zIndex: number) {}
 
     getId = () => this.id;
+    getBoardId = () => this.boardId;
 }
