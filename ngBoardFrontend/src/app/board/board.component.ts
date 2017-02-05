@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { Board } from './models/board';
 import { BoardService } from './services/board.service';
+import { NoteService } from '../note/services/note.service';
 
 @Component({
   selector: 'app-board',
@@ -16,7 +17,10 @@ export class BoardComponent implements OnInit, OnDestroy {
   private routeParamsSub: any;
   private board: Board;
 
-  constructor(private boardService: BoardService, private route: ActivatedRoute) { }
+  constructor(
+    private boardService: BoardService,
+    private noteService: NoteService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     // The reason that the params property on ActivatedRoute is an Observable 
@@ -35,15 +39,14 @@ export class BoardComponent implements OnInit, OnDestroy {
 
   getBoard = () => this.board;
 
-  setBoard(board: Board) {
-    this.board = board;
-  }
-
   openAddNoteModal() {
     this.addNoteModal.openModal();
   }
 
-  // onNoteCreated(note) {
-  //   this.board.getNotes().push(note);
-  // }
+  onNoteCreated(note) {
+    this.noteService.saveNote(note);
+    // TODO: Add note to board only after succefull resolution of 
+    // the async call to saveNote, otherwise show error
+    this.board.getNotes().push(note);
+  }
 }

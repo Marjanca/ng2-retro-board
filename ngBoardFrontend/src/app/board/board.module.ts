@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedModule } from './../shared/shared.module';
 import { BoardService } from './services/board.service';
+import { NoteService } from '../note/services/note.service';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
@@ -26,6 +27,9 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
     BoardComponent,
     NoteComponent
   ],
-  providers: [BoardService]
+  providers: [
+    BoardService,
+    NoteService
+  ]
 })
 export class BoardModule { }

@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private boardService: BoardService) { }
 
   ngOnInit() {
-    // TODO: get default board (last created, active etc.)
+    // TODO: tackle showing default board on first login (last created, active etc.)
   }
 
   getBoardMenuItems = () => this.boardService.getBoards().map(board => new BoardMenuItem(board.getId(), board.getTitle()));

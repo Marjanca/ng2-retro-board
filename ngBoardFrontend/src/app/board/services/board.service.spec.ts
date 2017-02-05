@@ -1,7 +1,10 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
+
 import { BoardService } from './board.service';
+import { NoteService } from '../../note/services/note.service';
+
 import { Board } from '../models/board';
 import { Note } from '../../note/models/note';
 
@@ -9,7 +12,10 @@ describe('BoardService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BoardService]
+      providers: [
+        BoardService,
+        NoteService
+      ]
     });
   });
 

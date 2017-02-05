@@ -9,8 +9,11 @@ import { Observable } from 'rxjs/Rx';
 
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 import { BoardComponent } from './board.component';
-import { NoteComponent } from '../note/note.component';
 import { BoardService } from './services/board.service';
+
+import { NoteComponent } from '../note/note.component';
+import { NoteService } from '../note/services/note.service';
+
 
 import { Note } from '../note/models/note';
 import { Board } from './models/board';
@@ -35,6 +38,7 @@ describe('BoardComponent', () => {
       ],
       providers: [
         BoardService,
+        NoteService,
         { provide: ActivatedRoute, useValue: { 'params': Observable.from([{ 'id': 1 }]) } }
       ]
     })
