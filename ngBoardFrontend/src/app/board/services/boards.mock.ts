@@ -1,6 +1,6 @@
-import { NoteCoords } from '../note/models/note-coords';
-import { Note } from '../note/models/note';
-import { Board } from './models/board';
+import { NoteCoords } from '../../note/models/note-coords';
+import { Note } from '../../note/models/note';
+import { Board } from '../models/board';
 
 const notes1 = [
     new Note('There is no spoon', 'Neo', new NoteCoords(100, 300, 1)),

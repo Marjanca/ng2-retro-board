@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Board } from './models/board';
+import { Board } from '../models/board';
 import { MOCK_BOARDS } from './boards.mock';
 
 @Injectable()
@@ -16,6 +16,10 @@ export class BoardService {
 
   setBoards(boards: Board[]) {
     this.boards = boards;
+  }
+
+  getBoard(boardId: number): Board {
+    return this.boards.find((board) => board.getId() === boardId );
   }
 
   getSelectedBoard = () => this.selectedBoard;
