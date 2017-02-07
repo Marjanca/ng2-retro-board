@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 
 import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
