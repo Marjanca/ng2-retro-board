@@ -1,8 +1,8 @@
 import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 
-import { NoteCoords } from './../../note/models/note-coords';
-import { Note } from './../../note/models/note';
-import { ModalComponent } from './../../shared/modal/modal.component';
+import { NoteCoords } from '../../note/models/note-coords';
+import { Note } from '../../note/models/note';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-add-note-modal',
