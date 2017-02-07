@@ -1,3 +1,4 @@
+import { SideMenuModule } from './side-menu/side-menu.module';
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async } from '@angular/core/testing';
@@ -13,12 +14,12 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        SideMenuComponent
+        AppComponent
       ],
       imports: [
         BoardModule,
-        RouterTestingModule
+        RouterTestingModule,
+        SideMenuModule
       ]
     });
   });

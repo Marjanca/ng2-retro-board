@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 
 import { BoardMenuItem } from './models/board-menu-item';
 
@@ -9,11 +9,20 @@ import { BoardMenuItem } from './models/board-menu-item';
 })
 
 export class SideMenuComponent {
+  @ViewChild('createBoardModal') createBoardModal;
   @Input() boards: BoardMenuItem[];
 
   sideMenuOpened: boolean = true;
 
   toggleSideMenu() {
     this.sideMenuOpened = !this.sideMenuOpened;
+  }
+
+  openCreateBoardModal() {
+
+  }
+
+  onBoardCreated() {
+
   }
 }

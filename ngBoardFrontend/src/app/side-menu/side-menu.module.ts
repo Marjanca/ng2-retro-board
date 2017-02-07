@@ -1,3 +1,6 @@
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from './../shared/shared.module';
+import { CreateBoardComponent } from './create-board/create-board.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -6,14 +9,17 @@ import { SideMenuComponent } from './side-menu.component';
 
 @NgModule({
   declarations: [
-    SideMenuComponent
+    SideMenuComponent,
+    CreateBoardComponent
   ],
   imports: [
+    FormsModule,    
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
-      SideMenuComponent
+    SideMenuComponent
   ]
 })
 export class SideMenuModule { }

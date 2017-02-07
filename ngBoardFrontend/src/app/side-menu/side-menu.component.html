@@ -4,6 +4,9 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" id="search-term">
     </div>
+    <div class="input-group">
+      <button type="button" (click)="openCreateBoardModal()">Create board</button>
+    </div>
   </div>
   <br>
   <br>
@@ -15,3 +18,4 @@
     </ul>
   </div>
 </div>
+<app-create-board #createBoardModal (boardCreated)="onBoardCreated()"></app-create-board>

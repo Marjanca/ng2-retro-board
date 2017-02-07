@@ -1,3 +1,7 @@
+import { ModalComponent } from './../shared/modal/modal.component';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from './../shared/shared.module';
+import { CreateBoardComponent } from './create-board/create-board.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
@@ -19,8 +23,8 @@ describe('SideMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SideMenuComponent],
-      imports: [RouterTestingModule]
+      declarations: [SideMenuComponent, CreateBoardComponent, ModalComponent],
+      imports: [RouterTestingModule, FormsModule]
     })
       .compileComponents();
   }));
