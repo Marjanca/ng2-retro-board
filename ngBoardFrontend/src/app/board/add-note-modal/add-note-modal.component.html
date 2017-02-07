@@ -1,4 +1,4 @@
 <app-modal #modal [title]="'Add Note'" (submit)="onSubmit()" (close)="onClose()">
-  <textarea [(ngModel)]="note.text" placeholder="Enter your text here..."></textarea>
+  <textarea [(ngModel)]="noteText" placeholder="Enter your text here..."></textarea>
   <label><input id="anonymous" type="checkbox">Anonymous</label>
 </app-modal>

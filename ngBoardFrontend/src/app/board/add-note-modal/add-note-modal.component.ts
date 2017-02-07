@@ -4,10 +4,6 @@ import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
 import { ModalComponent } from './../../shared/modal/modal.component';
 
-function createDefaultNote(): Note {
-  return new Note('', '<anonymous>', new NoteCoords(200, 250, 1000));
-}
-
 @Component({
   selector: 'app-add-note-modal',
   templateUrl: './add-note-modal.component.html',
@@ -19,7 +15,7 @@ export class AddNoteModalComponent {
 
   @Output() noteCreated: EventEmitter<Note> = new EventEmitter();
 
-  note: Note = createDefaultNote();
+  noteText: string = '';
 
   public openModal() {
     this.modal.openModal();
@@ -27,12 +23,17 @@ export class AddNoteModalComponent {
 
   onClose() {
     console.log('Add note modal closed.');
-    this.note = createDefaultNote();
+    this.resetDefaults();
   }
 
   onSubmit() {
     console.log('Add note modal submited.');
-    console.dir(this.note);
-    this.noteCreated.emit(this.note);
+    let note = new Note(this.noteText, '', new NoteCoords(100, 200, 300));
+    this.noteCreated.emit(note);
+    console.dir(note);
+  }
+
+  private resetDefaults() {
+    this.noteText = '';
   }
 }
