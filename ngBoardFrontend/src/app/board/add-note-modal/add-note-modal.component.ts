@@ -21,15 +21,13 @@ export class AddNoteModalComponent {
   }
 
   onClose() {
-    console.log('Add note modal closed.');
     this.resetDefaults();
   }
 
   onSubmit() {
-    console.log('Add note modal submited.');
     let note = new Note(0, 0, this.noteText, '', 100, 200, 300);
     this.noteCreated.emit(note);
-    console.dir(note);
+    this.resetDefaults();
   }
 
   private resetDefaults() {
