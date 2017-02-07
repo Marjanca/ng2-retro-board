@@ -19,13 +19,27 @@ describe('BoardService', () => {
     });
   });
 
+  beforeEach(inject([BoardService], (service: BoardService) => {
+    const boards = createDummyBoards();
+    service.setBoards(boards);
+  }));
+
   it('should ...', inject([BoardService], (service: BoardService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('should set all boards correctly', inject([BoardService], (service: BoardService) => {
-    const boards = createDummyBoards();
-    service.setBoards(boards);
+  it('should get all boards when getBoards called', inject([BoardService], (service: BoardService) => {
+    expect(service.getBoards().length).toBe(2);
+  }));
+
+  it('should return board when getBoard called', inject([BoardService], (service: BoardService) => {
+    let board = service.getBoard(1);
+    expect(board.getTitle()).toBe('January 2017');
+  }));
+
+  it('should return null when getBoard called with non existent board id', inject([BoardService], (service: BoardService) => {
+    let board = service.getBoard(0);
+    expect(board).toBe(null);
   }));
 
   function createDummyBoards(): Board[] {
