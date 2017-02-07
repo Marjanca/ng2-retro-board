@@ -118,4 +118,10 @@ describe('BoardComponent', () => {
  
      expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');*/
   });
+
+  it('should add note to board notes collection when onNoteCreated called', () => {
+    let note =  new Note(3, 1, 'some text', 'some author', 100, 200, 1);
+    component.onNoteCreated(note);
+    expect(component.getBoard().getNotes()[2].id).toBe(note.id);
+  });
 });
