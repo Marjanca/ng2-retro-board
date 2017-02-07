@@ -8,10 +8,12 @@ import { SideMenuModule } from './side-menu/side-menu.module';
 import { BoardModule } from './board/board.module';
 
 import { AppComponent } from './app.component';
+import { CreateBoardComponent } from './create-board/create-board.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CreateBoardComponent
   ],
   imports: [
     BrowserModule,
