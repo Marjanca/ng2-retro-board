@@ -1,5 +1,7 @@
-import { Note } from './../../note/models/note';
-import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
+
+import { Note } from '../../note/models/note';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-add-note-modal',
@@ -8,44 +10,29 @@ import { Component, ViewChild, ElementRef, Output, EventEmitter } from '@angular
 })
 export class AddNoteModalComponent {
 
-  @ViewChild('modal') modal: ElementRef;
-  @ViewChild('textarea') textArea: ElementRef;
+  @ViewChild('modal') modal: ModalComponent;
 
-  @Output() onNoteCreated = new EventEmitter<Note>();
+  @Output() noteCreated: EventEmitter<Note> = new EventEmitter();
 
-  note: Note = new Note(0, 0, '', '<anonymous>', 150, 250, 1);
+  noteText: string = '';
 
-  constructor() { }
-
-  private clearTextArea() {
-    // this.textArea.nativeElement.value = '';
-    this.note = new Note(0, 0, '', '<anonymous>', 150, 250, 1);
+  public openModal() {
+    this.modal.openModal();
   }
 
-  openModal() {
-    this.modal.nativeElement.style.display = 'block';
+  onClose() {
+    console.log('Add note modal closed.');
+    this.resetDefaults();
   }
 
-  closeModal() {
-    this.clearTextArea();
-    this.modal.nativeElement.style.display = 'none';
+  onSubmit() {
+    console.log('Add note modal submited.');
+    let note = new Note(0, 0, this.noteText, '', 100, 200, 300);
+    this.noteCreated.emit(note);
+    console.dir(note);
   }
 
-  checkForClosing(targetElement) {
-    if (targetElement === this.modal.nativeElement) {
-      this.closeModal();
-    }
+  private resetDefaults() {
+    this.noteText = '';
   }
-
-  createNote() {
-
-    if (this.note.text.length === 0) {
-      return;
-    }
-
-    this.onNoteCreated.emit(this.note);
-
-    this.closeModal();
-  }
-
 }
