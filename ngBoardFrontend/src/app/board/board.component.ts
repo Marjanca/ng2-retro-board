@@ -14,7 +14,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
 
   private routeParamsSub: any;
-  private board: Board;
+  board: Board;
 
   constructor(private boardService: BoardService, private route: ActivatedRoute) { }
 

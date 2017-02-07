@@ -1,13 +1,14 @@
 import { FormsModule } from '@angular/forms';
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
+import { By } from '@angular/platform-browser';
+
 import { Observable } from 'rxjs/Rx';
 
+import { ModalComponent } from './../shared/modal/modal.component';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
+/* tslint:disable:no-unused-variable */
+
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
 import { BoardService } from './services/board.service';
@@ -26,13 +27,13 @@ describe('BoardComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        FormsModule,
-        RouterTestingModule
+        FormsModule
       ],
       declarations: [
         AddNoteModalComponent,
         BoardComponent,
-        NoteComponent
+        NoteComponent,
+        ModalComponent
       ],
       providers: [
         BoardService,
@@ -50,6 +51,11 @@ describe('BoardComponent', () => {
       new Note('There is no spoon', 'Neo', new NoteCoords(100, 300, 1)),
       new Note('I\'m going to make him an offer he can\'t refuse.', 'Corleone', new NoteCoords(200, 500, 1))
     ];
+
+    mockBoard = new Board(1, 'test board', 'test creator');
+    mockBoard.setNotes(mockNotes);
+
+    component.board = mockBoard;
 
     fixture.detectChanges();
   });
@@ -95,12 +101,18 @@ describe('BoardComponent', () => {
   });
 
   it('should show add note modal when Add note button is clicked', () => {
-    // Make sure modal is hidden
-    component.addNoteModal.modal.nativeElement.style.display = 'none';
+    component.addNoteModal.modal.closeModal();
 
     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
     addNoteButton.triggerEventHandler('click', null);
 
-    expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');
+    expect(component.addNoteModal.modal.isOpened()).toBeTruthy();
+    // Make sure modal is hidden
+    /* component.addNoteModal.modal.close();
+ 
+     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
+     addNoteButton.triggerEventHandler('click', null);
+ 
+     expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');*/
   });
 });
