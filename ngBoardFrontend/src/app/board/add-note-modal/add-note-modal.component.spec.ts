@@ -32,47 +32,23 @@ describe('AddNoteModalComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should emit onNoteCreate event when Post button is clicked ', () => {
-  //   let receivedNote;
-  //   component.onNoteCreated.subscribe(emittedNote => receivedNote = emittedNote);
+  it('should emit onNoteCreate event when Post button is clicked ', () => {
+    let receivedNote: Note;
+    component.noteCreated.subscribe(emittedNote => receivedNote = emittedNote);
 
-  //   let expectedNote = new Note(1, 1, 'some text', 'some author', 100, 200, 1);
-  //   component.note = expectedNote;
-  //   let postButton = fixture.debugElement.query(By.css('.data-test-post-button'));
-  //   postButton.triggerEventHandler('click', null);
+    let expectedNote = new Note(1, 1, 'some text', 'some author', 100, 200, 1);
+    component.boardId = expectedNote.boardId;
+    component.noteText = expectedNote.text;
 
-  //   expect(receivedNote).toBe(expectedNote);
-  // });
+    component.onSubmit();
 
-  // it('should close modal when close button is clicked', () => {
-  //   let modalDiv = fixture.debugElement.query(By.css('.data-test-modal-div'));
-  //   modalDiv.nativeElement.style.display = 'block';
+    expect(receivedNote.boardId).toBe(expectedNote.boardId);
+    expect(receivedNote.text).toBe(expectedNote.text);
+  });
 
-  //   let closeButton = fixture.debugElement.query(By.css('.data-test-close-button'));
-  //   closeButton.triggerEventHandler('click', null);
-
-  //   fixture.detectChanges();
-
-  //   expect(modalDiv.nativeElement.style.display).toBe('none');
-  // });
-
-  // it('should close modal when is clicked outside of it', () => {
-  //   let modalDiv = fixture.debugElement.query(By.css('.data-test-modal-div'));
-  //   modalDiv.nativeElement.style.display = 'block';
-
-  //   let mouseClickEvent = {
-  //     target: modalDiv.nativeElement
-  //   };
-  //   modalDiv.triggerEventHandler('click', mouseClickEvent);
-
-  //   fixture.detectChanges();
-
-  //   expect(modalDiv.nativeElement.style.display).toBe('none');
-  // });
-
-  // it('should reset textarea content after closing modal', () => {
-  //   component.note.text = 'Some note text';
-  //   component.closeModal();
-  //   expect(component.note.text).toBe('');
-  // });
+  it('should reset noteText after closing modal', () => {
+    component.noteText = 'Some note text';
+    component.onClose();
+    expect(component.noteText).toBe('');
+  });
 });

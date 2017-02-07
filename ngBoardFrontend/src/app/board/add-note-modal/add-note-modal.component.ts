@@ -12,8 +12,7 @@ export class AddNoteModalComponent {
   @ViewChild('modal') modal: ModalComponent;
   @Output() noteCreated: EventEmitter<Note> = new EventEmitter();
 
-  private boardId: number;
-
+  boardId: number;
   noteText: string = '';
 
   public openModal(boardId: number) {
