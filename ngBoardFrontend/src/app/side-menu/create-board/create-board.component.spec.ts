@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { ModalComponent } from './../../shared/modal/modal.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,9 +13,10 @@ describe('CreateBoardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateBoardComponent ]
+      imports: [FormsModule],
+      declarations: [CreateBoardComponent, ModalComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
