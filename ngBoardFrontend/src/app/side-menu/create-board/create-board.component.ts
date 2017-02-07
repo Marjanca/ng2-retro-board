@@ -1,5 +1,7 @@
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+
+import { ModalComponent } from './../../shared/modal/modal.component';
 import { Board } from './../../board/models/board';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-create-board',
@@ -8,9 +10,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CreateBoardComponent {
 
+  @ViewChild('modal') modal: ModalComponent;
+  
   @Output() boardCreated: EventEmitter<Board> = new EventEmitter<any>();
 
   private boardTitle: string;
+
+  openModal() {
+    this.modal.openModal();
+  }
 
   onClose() {
     console.log("Create board closed.");
