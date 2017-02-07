@@ -1,13 +1,15 @@
-import { ModalComponent } from './../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DebugElement } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { By } from '@angular/platform-browser';
+
+import { Observable } from 'rxjs/Rx';
+
+import { ModalComponent } from './../shared/modal/modal.component';
 import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-import { RouterTestingModule } from '@angular/router/testing';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/Rx';
 
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
@@ -33,6 +35,7 @@ describe('BoardComponent', () => {
         AddNoteModalComponent,
         BoardComponent,
         NoteComponent,
+        ModalComponent
       ],
       providers: [
         BoardService,
