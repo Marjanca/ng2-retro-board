@@ -9,14 +9,15 @@ import { ModalComponent } from '../../shared/modal/modal.component';
   styleUrls: ['./add-note-modal.component.scss']
 })
 export class AddNoteModalComponent {
-
   @ViewChild('modal') modal: ModalComponent;
-
   @Output() noteCreated: EventEmitter<Note> = new EventEmitter();
+
+  private boardId: number;
 
   noteText: string = '';
 
-  public openModal() {
+  public openModal(boardId: number) {
+    this.boardId = boardId;
     this.modal.openModal();
   }
 
@@ -25,7 +26,7 @@ export class AddNoteModalComponent {
   }
 
   onSubmit() {
-    let note = new Note(0, 0, this.noteText, '', 100, 200, 300);
+    let note = new Note(0, this.boardId, this.noteText, '', 100, 200, 300);
     this.noteCreated.emit(note);
     this.resetDefaults();
   }

@@ -16,7 +16,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
 
   private routeParamsSub: any;
-  board: Board;
+  private board: Board;
 
   constructor(
     private boardService: BoardService,
@@ -41,7 +41,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   getBoard = () => this.board;
 
   openAddNoteModal() {
-    this.addNoteModal.openModal();
+    this.addNoteModal.openModal(this.board.getId());
   }
 
   onNoteCreated(note: Note) {
