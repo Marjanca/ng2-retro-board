@@ -14,7 +14,7 @@ export class CreateBoardComponent {
   
   @Output() boardCreated: EventEmitter<Board> = new EventEmitter<any>();
 
-  private boardTitle: string = '';
+  boardTitle: string = '';
 
   openModal() {
     this.modal.openModal();

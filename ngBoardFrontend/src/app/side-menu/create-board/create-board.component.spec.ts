@@ -1,4 +1,5 @@
-import {ModalComponent} from '../../shared/modal/modal.component';
+import { Board } from './../../board/models/board';
+import { ModalComponent } from '../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -27,5 +28,16 @@ describe('CreateBoardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit a board when onSubmit is called', () => {
+    component.boardTitle = 'Board Title';
+    component.onSubmit();
+
+    let expectedBoard = new Board(0, 'Board Title', '');
+    component.boardCreated.subscribe(board => {
+      let isEqual = (board == expectedBoard);
+      expect(isEqual).toBeTruthy();
+    });
   });
 });
