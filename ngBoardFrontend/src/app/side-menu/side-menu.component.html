@@ -4,13 +4,11 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" id="search-term">
     </div>
-    <div class="input-group">
-      <button type="button" (click)="openCreateBoardModal()">Create board</button>
-    </div>
   </div>
   <br>
   <br>
   <div class="side-menu-boards-container">
+    <button type="button" (click)="openCreateBoardModal()">Create board</button>
     <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
         <a [routerLink]="['/board', board.id]">{{board.name}}</a>
