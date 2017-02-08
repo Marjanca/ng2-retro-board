@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 
 import { ModalComponent } from './../../shared/modal/modal.component';
 import { Board } from './../../board/models/board';
@@ -11,7 +11,7 @@ import { Board } from './../../board/models/board';
 export class CreateBoardComponent {
 
   @ViewChild('modal') modal: ModalComponent;
-  
+
   @Output() boardCreated: EventEmitter<Board> = new EventEmitter<any>();
 
   boardTitle: string = '';
@@ -21,12 +21,12 @@ export class CreateBoardComponent {
   }
 
   onClose() {
-    console.log("Create board closed.");
+    console.log('Create board closed.');
     this.resetDefaults();
   }
 
   onSubmit() {
-    console.log("Board created");
+    console.log('Board created');
     let board = new Board(0, this.boardTitle, '');
     console.dir(board);
     this.boardCreated.emit(board);

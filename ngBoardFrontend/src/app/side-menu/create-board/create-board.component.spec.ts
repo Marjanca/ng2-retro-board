@@ -36,8 +36,7 @@ describe('CreateBoardComponent', () => {
 
     let expectedBoard = new Board(0, 'Board Title', '');
     component.boardCreated.subscribe(board => {
-      let areEqual = (board == expectedBoard);
-      expect(areEqual).toBeTruthy();
+      expect(board).toEqual(expectedBoard);
     });
   });
 });

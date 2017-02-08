@@ -39,8 +39,7 @@ describe('AddNoteModalComponent', () => {
 
     let expectedNote = new Note(this.noteText, '', new NoteCoords(100, 200, 300));
     component.noteCreated.subscribe(note => {
-      let areEqual = (note == expectedNote);
-      expect(areEqual).toBeTruthy();
+      expect(note).toEqual(expectedNote);
     });
   });
 });

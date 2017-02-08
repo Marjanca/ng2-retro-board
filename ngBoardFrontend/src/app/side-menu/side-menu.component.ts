@@ -1,4 +1,3 @@
-import { Board } from './../board/models/board';
 import { Component, Input, ViewChild } from '@angular/core';
 
 import { CreateBoardComponent } from './create-board/create-board.component';
