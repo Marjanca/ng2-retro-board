@@ -5,4 +5,4 @@
   </div>
   <app-note *ngFor="let note of board.getNotes()" [note]="note"> </app-note>
 </div>
-<app-add-note-modal (noteCreated)="onNoteCreated($event)" #addNoteModal></app-add-note-modal>
+<app-add-note-modal #addNoteModal></app-add-note-modal>
