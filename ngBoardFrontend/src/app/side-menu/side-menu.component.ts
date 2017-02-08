@@ -1,5 +1,7 @@
+import { Board } from './../board/models/board';
 import { Component, Input, ViewChild } from '@angular/core';
 
+import { CreateBoardComponent } from './create-board/create-board.component';
 import { BoardMenuItem } from './models/board-menu-item';
 
 @Component({
@@ -9,7 +11,7 @@ import { BoardMenuItem } from './models/board-menu-item';
 })
 
 export class SideMenuComponent {
-  @ViewChild('createBoardModal') createBoardModal;
+  @ViewChild('createBoardModal') createBoardModal: CreateBoardComponent;
   @Input() boards: BoardMenuItem[];
 
   sideMenuOpened: boolean = true;
@@ -19,10 +21,6 @@ export class SideMenuComponent {
   }
 
   openCreateBoardModal() {
-
-  }
-
-  onBoardCreated() {
-
+    this.createBoardModal.openModal();
   }
 }
