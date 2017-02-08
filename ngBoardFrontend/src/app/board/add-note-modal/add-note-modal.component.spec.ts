@@ -1,12 +1,13 @@
-import { NoteCoords } from './../../note/models/note-coords';
-import { Note } from './../../note/models/note';
-import { ModalComponent } from './../../shared/modal/modal.component';
+
 import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { NoteCoords } from './../../note/models/note-coords';
+import { Note } from './../../note/models/note';
+import { ModalComponent } from './../../shared/modal/modal.component';
 import { AddNoteModalComponent } from './add-note-modal.component';
 
 describe('AddNoteModalComponent', () => {

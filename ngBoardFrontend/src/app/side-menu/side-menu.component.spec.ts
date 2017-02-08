@@ -1,12 +1,12 @@
-import { ModalComponent } from './../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
-import { CreateBoardComponent } from './create-board/create-board.component';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { ModalComponent } from './../shared/modal/modal.component';
+import { CreateBoardComponent } from './create-board/create-board.component';
 import { SideMenuComponent } from './side-menu.component';
 import { BoardMenuItem } from './models/board-menu-item';
 
