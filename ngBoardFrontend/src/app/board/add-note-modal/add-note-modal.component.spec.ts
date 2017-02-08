@@ -1,3 +1,5 @@
+import { NoteCoords } from './../../note/models/note-coords';
+import { Note } from './../../note/models/note';
 import { ModalComponent } from './../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
@@ -29,5 +31,16 @@ describe('AddNoteModalComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should emit a board when onSubmit is called', () => {
+    component.noteText = 'Note Text';
+    component.onSubmit();
+
+    let expectedNote = new Note(this.noteText, '', new NoteCoords(100, 200, 300));
+    component.noteCreated.subscribe(note => {
+      let areEqual = (note == expectedNote);
+      expect(areEqual).toBeTruthy();
+    });
   });
 });
