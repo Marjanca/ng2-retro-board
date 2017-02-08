@@ -39,4 +39,10 @@ describe('CreateBoardComponent', () => {
       expect(board).toEqual(expectedBoard);
     });
   });
+
+  it('should reset the boardTitle when onClose is called', () => {
+    component.boardTitle = 'Board title';
+    component.onClose();
+    expect(component.boardTitle).toBe('');
+  });
 });
