@@ -11,21 +11,9 @@ export class AppComponent implements OnInit {
 
   constructor(private boardService: BoardService) { }
 
-  // Bootstrapping of the app.
   ngOnInit() {
-    this.boardService.selectBoard(this.boardService.getBoards()[0].getId());
+    // TODO: tackle showing default board on first login (last created, active etc.)
   }
 
-  getBoardMenuItems = () => this.boardService.getBoards().map(board => new BoardMenuItem(board.getId(), board.getTitle()));
-
-  getBoard = (boardId: number) => this.boardService.getBoards().find(board => board.getId() === boardId);
-
-  setActiveBoard(boardId: number) {
-    this.boardService.selectBoard(boardId);
-  }
-
-  menuItemClicked(item: BoardMenuItem) {
-    this.setActiveBoard(item.id);
-  }
-
+  getBoardMenuItems = () => this.boardService.getBoards().map(board => new BoardMenuItem(board.Id, board.Title));
 }

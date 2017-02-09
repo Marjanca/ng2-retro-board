@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
+
 import { Board } from '../models/board';
-import { MOCK_BOARDS } from './boards.mock';
+import { NoteService } from '../../note/services/note.service';
 
 @Injectable()
 export class BoardService {
+  private boards: Board[] = [
+    new Board(1, 'January 2017', 'Sale'),
+    new Board(2, 'March 2017', 'Masi')
+  ];
 
-  private selectedBoard: Board;
-  private boards: Board[];
-
-  constructor() {
-    this.boards = MOCK_BOARDS;
-  }
+  constructor(private noteService: NoteService) { }
 
   getBoards = () => this.boards;
 
@@ -19,12 +19,15 @@ export class BoardService {
   }
 
   getBoard(boardId: number): Board {
-    return this.boards.find((board) => board.getId() === boardId );
-  }
+    let board = this.boards.find((tempBoard) => tempBoard.Id === boardId );
 
-  getSelectedBoard = () => this.selectedBoard;
+    if (!board) {
+      // TODO: No such board error
+      return null;
+    }
 
-  selectBoard(boardId: number) {
-    this.selectedBoard = this.getBoards().find(b => b.getId() === boardId);
+    // TODO: Optimize when integrated with backend to avoid two separate REST calls
+    board.Notes = this.noteService.getNotes(board.Id);
+    return board;
   }
 }
