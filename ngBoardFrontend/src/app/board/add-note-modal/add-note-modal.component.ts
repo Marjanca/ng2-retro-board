@@ -10,7 +10,7 @@ import { ModalComponent } from '../../shared/modal/modal.component';
 })
 export class AddNoteModalComponent {
   @ViewChild('modal') modal: ModalComponent;
-  @Output() noteCreated: EventEmitter<Note> = new EventEmitter();
+  @Output() noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
 
   boardId: number;
   noteText: string = '';
