@@ -15,5 +15,5 @@ export class AppComponent implements OnInit {
     // TODO: tackle showing default board on first login (last created, active etc.)
   }
 
-  getBoardMenuItems = () => this.boardService.getBoards().map(board => new BoardMenuItem(board.getId(), board.getTitle()));
+  getBoardMenuItems = () => this.boardService.getBoards().map(board => new BoardMenuItem(board.Id, board.Title));
 }

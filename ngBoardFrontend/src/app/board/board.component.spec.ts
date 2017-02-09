@@ -56,9 +56,9 @@ describe('BoardComponent', () => {
     ];
 
     mockBoard = new Board(1, 'test board', 'test creator');
-    mockBoard.setNotes(mockNotes);
+    mockBoard.Notes = mockNotes;
 
-    component.board = mockBoard;
+    component.Board = mockBoard;
 
     fixture.detectChanges();
   });
@@ -75,7 +75,7 @@ describe('BoardComponent', () => {
 
     noteDivs.forEach((de, index) => {
       let divContent = de.nativeElement.textContent;
-      let expectedContent = mockNotes[index].text;
+      let expectedContent = mockNotes[index].Text;
 
       expect(divContent).toContain(expectedContent);
     });
@@ -97,9 +97,9 @@ describe('BoardComponent', () => {
     noteDivs.forEach((de, index) => {
       let note = mockNotes[index];
 
-      expect(de.nativeElement.style.top).toBe(note.top + 'px');
-      expect(de.nativeElement.style.left).toBe(note.left + 'px');
-      expect(de.nativeElement.style.zIndex).toBe(note.zIndex.toString());
+      expect(de.nativeElement.style.top).toBe(note.Top + 'px');
+      expect(de.nativeElement.style.left).toBe(note.Left + 'px');
+      expect(de.nativeElement.style.zIndex).toBe(note.ZIndex.toString());
     });
   });
 
@@ -122,6 +122,6 @@ describe('BoardComponent', () => {
   it('should add note to board notes collection when onNoteCreated called', () => {
     let note =  new Note(3, 1, 'some text', 'some author', 100, 200, 1);
     component.onNoteCreated(note);
-    expect(component.getBoard().getNotes()[2].id).toBe(note.id);
+    expect(component.Board.Notes[2].Id).toBe(note.Id);
   });
 });

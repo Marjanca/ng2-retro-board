@@ -6,15 +6,26 @@ export class Board {
     constructor(
         private id: number,
         private title: string,
-        private creator: string) {}
+        private creator: string) { }
 
-    setNotes(notes: Note[]) {
+    get Notes(): Note[] {
+        return this.notes;
+    }
+    set Notes(notes: Note[]) {
         this.notes = notes;
     }
 
-    getNotes = () => this.notes;
+    get Id(): number {
+        return this.id;
+    }
+    set Id(id: number) {
+        this.id = id;
+    }
 
-    getId = () => this.id;
-
-    getTitle = () => this.title;
+    get Title(): string {
+        return this.title;
+    }
+    set Title(title: string) {
+        this.title = title;
+    }
 }

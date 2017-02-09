@@ -34,7 +34,7 @@ describe('BoardService', () => {
 
   it('should return board when getBoard called', inject([BoardService], (service: BoardService) => {
     let board = service.getBoard(1);
-    expect(board.getTitle()).toBe('January 2017');
+    expect(board.Title).toBe('January 2017');
   }));
 
   it('should return null when getBoard called with non existent board id', inject([BoardService], (service: BoardService) => {
@@ -55,10 +55,10 @@ describe('BoardService', () => {
     ];
 
     const board1 = new Board(1, 'January 2017', 'Sale');
-    board1.setNotes(notes1);
+    board1.Notes = notes1;
 
     const board2 = new Board(2, 'March 2017', 'Masi');
-    board2.setNotes(notes2);
+    board2.Notes = notes2;
 
     return [board1, board2];
   }

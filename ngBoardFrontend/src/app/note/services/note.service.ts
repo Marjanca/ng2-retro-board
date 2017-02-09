@@ -15,11 +15,11 @@ export class NoteService {
   constructor() { }
 
   getNote(noteId: number): Note {
-    return this.notes.find((note) => note.getId() === noteId );
+    return this.notes.find((note) => note.Id === noteId );
   }
 
   getNotes(boardId: number): Note[] {
-    return this.notes.filter((note) => note.getBoardId() === boardId);
+    return this.notes.filter((note) => note.BoardId === boardId);
   }
 
   saveNote(note: Note) {

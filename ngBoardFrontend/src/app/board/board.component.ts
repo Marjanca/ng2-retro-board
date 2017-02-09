@@ -16,12 +16,20 @@ export class BoardComponent implements OnInit, OnDestroy {
   @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
 
   private routeParamsSub: any;
-  board: Board;
+  private board: Board;
 
   constructor(
     private boardService: BoardService,
     private noteService: NoteService,
     private route: ActivatedRoute) { }
+
+  get Board(): Board {
+    return this.board;
+  }
+
+  set Board(board: Board) {
+      this.board = board;
+  }
 
   ngOnInit() {
     // The reason that the params property on ActivatedRoute is an Observable 
@@ -38,16 +46,14 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.routeParamsSub.unsubscribe();
   }
 
-  getBoard = () => this.board;
-
   openAddNoteModal() {
-    this.addNoteModal.openModal(this.board.getId());
+    this.addNoteModal.openModal(this.board.Id);
   }
 
   onNoteCreated(note: Note) {
     this.noteService.saveNote(note);
     // TODO: Add note to board only after succefull resolution of 
     // the async call to saveNote, otherwise show error
-    this.board.getNotes().push(note);
+    this.board.Notes.push(note);
   }
 }

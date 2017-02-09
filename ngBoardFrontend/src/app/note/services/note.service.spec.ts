@@ -20,14 +20,14 @@ describe('BoardService', () => {
 
   it('should get note when GetNote', inject([NoteService], (service: NoteService) => {
     let note = service.getNote(1);
-    expect(note.text).toBe('There is no spoon');
+    expect(note.Text).toBe('There is no spoon');
   }));
 
   it('should get all notes for board when GetNotes called', inject([NoteService], (service: NoteService) => {
     let notes = service.getNotes(2);
     expect(notes.length).toBe(2);
-    expect(notes[0].text).toBe('Do. Or do not. There is no try');
-    expect(notes[1].text).toBe('Impressive. Most impressive. Obi-Wan has taught you well. You have controlled your fear. ' +
+    expect(notes[0].Text).toBe('Do. Or do not. There is no try');
+    expect(notes[1].Text).toBe('Impressive. Most impressive. Obi-Wan has taught you well. You have controlled your fear. ' +
         'Now, release your anger. Only your hatred can destroy me.');
   }));
 
@@ -37,6 +37,6 @@ describe('BoardService', () => {
 
     let notes = service.getNotes(3);
     expect(notes.length).toBe(1);
-    expect(notes[0].text).toBe('test');
+    expect(notes[0].Text).toBe('test');
   }));
 });

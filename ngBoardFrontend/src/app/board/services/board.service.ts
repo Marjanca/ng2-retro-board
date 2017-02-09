@@ -19,7 +19,7 @@ export class BoardService {
   }
 
   getBoard(boardId: number): Board {
-    let board = this.boards.find((tempBoard) => tempBoard.getId() === boardId );
+    let board = this.boards.find((tempBoard) => tempBoard.Id === boardId );
 
     if (!board) {
       // TODO: No such board error
@@ -27,7 +27,7 @@ export class BoardService {
     }
 
     // TODO: Optimize when integrated with backend to avoid two separate REST calls
-    board.setNotes(this.noteService.getNotes(board.getId()));
+    board.Notes = this.noteService.getNotes(board.Id);
     return board;
   }
 }

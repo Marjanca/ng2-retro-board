@@ -1,8 +1,8 @@
-<h1 class="data-test-board-title pull-right">{{board.title}}</h1>
+<h1 class="data-test-board-title pull-right">{{board.Title}}</h1>
 <div id="table" class="table" appDragNDrop>
   <div>
     <button type="button" (click)="openAddNoteModal()" class="data-test-add-note-button">Add note</button>
   </div>
-  <app-note *ngFor="let note of board.getNotes()" [note]="note"> </app-note>
+  <app-note *ngFor="let note of board.Notes" [note]="note"> </app-note>
 </div>
 <app-add-note-modal (noteCreated)="onNoteCreated($event)" #addNoteModal></app-add-note-modal>
