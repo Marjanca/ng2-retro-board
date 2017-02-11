@@ -6,7 +6,7 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ModalComponent } from './../shared/modal/modal.component';
-import { CreateBoardComponent } from './create-board/create-board.component';
+import { CreateBoardComponent } from '../board/create-board/create-board.component';
 import { SideMenuComponent } from './side-menu.component';
 import { BoardMenuItem } from './models/board-menu-item';
 

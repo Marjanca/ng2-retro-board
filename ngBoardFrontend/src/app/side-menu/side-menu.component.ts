@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
-import { CreateBoardComponent } from './create-board/create-board.component';
+import { CreateBoardComponent } from '../board/create-board/create-board.component';
 import { BoardMenuItem } from './models/board-menu-item';
 
 @Component({

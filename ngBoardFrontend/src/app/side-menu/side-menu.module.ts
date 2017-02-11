@@ -3,20 +3,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { BoardModule } from './../board/board.module';
 import { SharedModule } from './../shared/shared.module';
-import { CreateBoardComponent } from './create-board/create-board.component';
+import { CreateBoardComponent } from '../board/create-board/create-board.component';
 import { SideMenuComponent } from './side-menu.component';
 
 @NgModule({
   declarations: [
-    SideMenuComponent,
-    CreateBoardComponent
+    SideMenuComponent
   ],
   imports: [
     FormsModule,
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    BoardModule
   ],
   exports: [
     SideMenuComponent

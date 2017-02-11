@@ -31,18 +31,18 @@ describe('CreateBoardComponent', () => {
   });
 
   it('should emit a board when onSubmit is called', () => {
-    component.boardTitle = 'Board Title';
+    component.BoardTitle = 'Board Title';
     component.onSubmit();
 
     let expectedBoard = new Board(0, 'Board Title', '');
-    component.boardCreated.subscribe(board => {
+    component.BoardCreated.subscribe(board => {
       expect(board).toEqual(expectedBoard);
     });
   });
 
-  it('should reset the boardTitle when onClose is called', () => {
-    component.boardTitle = 'Board title';
+  it('should reset the BoardTitle when onClose is called', () => {
+    component.BoardTitle = 'Board title';
     component.onClose();
-    expect(component.boardTitle).toBe('');
+    expect(component.BoardTitle).toBe('');
   });
 });
