@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 
 import { BoardModule } from './../board/board.module';
 import { SharedModule } from './../shared/shared.module';
-import { CreateBoardComponent } from '../board/create-board/create-board.component';
 import { SideMenuComponent } from './side-menu.component';
 
 @NgModule({

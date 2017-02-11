@@ -10,10 +10,10 @@ import { Board } from './../../board/models/board';
 })
 export class CreateBoardComponent {
 
-  @ViewChild('modal') 
+  @ViewChild('modal')
   private modal: ModalComponent;
 
-  @Output() 
+  @Output()
   private boardCreated: EventEmitter<Board> = new EventEmitter<any>();
 
   private boardTitle: string = '';
@@ -26,15 +26,9 @@ export class CreateBoardComponent {
     this.boardTitle = boardTitle;
   }
 
-  get Modal() {
-    return this.modal;
-  }
-
   get BoardCreated() {
     return this.boardCreated;
   }
-
-  get 
 
   openModal() {
     this.modal.openModal();
