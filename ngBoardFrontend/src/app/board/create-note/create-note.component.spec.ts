@@ -8,7 +8,7 @@ import { DebugElement } from '@angular/core';
 import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
 import { ModalComponent } from './../../shared/modal/modal.component';
-import { CreateNoteComponent } from './add-note-modal.component';
+import { CreateNoteComponent } from './create-note.component';
 
 describe('AddNoteModalComponent', () => {
   let component: CreateNoteComponent;
@@ -35,11 +35,11 @@ describe('AddNoteModalComponent', () => {
   });
 
   it('should emit a board when onSubmit is called', () => {
-    component.noteText = 'Note Text';
+    component.NoteText = 'Note Text';
     component.onSubmit();
 
-    let expectedNote = new Note(this.noteText, '', new NoteCoords(100, 200, 300));
-    component.noteCreated.subscribe(note => {
+    let expectedNote = new Note('Note Text', '', new NoteCoords(100, 200, 300));
+    component.NoteCreated.subscribe(note => {
       expect(note).toEqual(expectedNote);
     });
   });
