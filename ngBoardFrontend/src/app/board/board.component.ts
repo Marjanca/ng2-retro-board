@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 import { Board } from './models/board';
 import { BoardService } from './services/board.service';
 
@@ -11,7 +11,7 @@ import { BoardService } from './services/board.service';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit, OnDestroy {
-  @ViewChild('addNoteModal') addNoteModal: AddNoteModalComponent;
+  @ViewChild('addNoteModal') addNoteModal: CreateNoteComponent;
 
   private routeParamsSub: any;
   board: Board;

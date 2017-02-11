@@ -5,11 +5,11 @@ import { Note } from './../../note/models/note';
 import { ModalComponent } from './../../shared/modal/modal.component';
 
 @Component({
-  selector: 'app-add-note-modal',
-  templateUrl: './add-note-modal.component.html',
-  styleUrls: ['./add-note-modal.component.scss']
+  selector: 'app-create-note',
+  templateUrl: './create-note.component.html',
+  styleUrls: ['./create-note.component.scss']
 })
-export class AddNoteModalComponent {
+export class CreateNoteComponent {
 
   @ViewChild('modal') modal: ModalComponent;
 

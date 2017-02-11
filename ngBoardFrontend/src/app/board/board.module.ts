@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { CreateBoardComponent } from './create-board/create-board.component';
 import { SharedModule } from './../shared/shared.module';
 import { BoardService } from './services/board.service';
-import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
 import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
@@ -21,7 +21,7 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
     BoardComponent,
     NoteComponent,
     DragNDropDirective,
-    AddNoteModalComponent,
+    CreateNoteComponent,
     CreateBoardComponent
   ],
   exports: [

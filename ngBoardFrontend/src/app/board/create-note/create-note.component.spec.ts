@@ -8,24 +8,24 @@ import { DebugElement } from '@angular/core';
 import { NoteCoords } from './../../note/models/note-coords';
 import { Note } from './../../note/models/note';
 import { ModalComponent } from './../../shared/modal/modal.component';
-import { AddNoteModalComponent } from './add-note-modal.component';
+import { CreateNoteComponent } from './add-note-modal.component';
 
 describe('AddNoteModalComponent', () => {
-  let component: AddNoteModalComponent;
-  let fixture: ComponentFixture<AddNoteModalComponent>;
+  let component: CreateNoteComponent;
+  let fixture: ComponentFixture<CreateNoteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule
       ],
-      declarations: [AddNoteModalComponent, ModalComponent]
+      declarations: [CreateNoteComponent, ModalComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddNoteModalComponent);
+    fixture = TestBed.createComponent(CreateNoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
