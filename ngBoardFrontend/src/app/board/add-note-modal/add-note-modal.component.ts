@@ -13,7 +13,7 @@ export class AddNoteModalComponent {
 
   @ViewChild('modal') modal: ModalComponent;
 
-  @Output() noteCreated: EventEmitter<Note> = new EventEmitter<any>();
+  @Output() noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
 
   noteText: string = '';
 
