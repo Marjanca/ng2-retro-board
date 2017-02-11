@@ -11,11 +11,25 @@ import { ModalComponent } from './../../shared/modal/modal.component';
 })
 export class CreateNoteComponent {
 
-  @ViewChild('modal') modal: ModalComponent;
+  @ViewChild('modal')
+  private modal: ModalComponent;
 
-  @Output() noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
+  @Output()
+  private noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
 
-  noteText: string = '';
+  private noteText: string = '';
+
+  get NoteText() {
+    return this.noteText;
+  }
+
+  set NoteText(noteText: string) {
+    this.noteText = noteText;
+  }
+
+  get NoteCreated() {
+    return this.noteCreated;
+  }
 
   public openModal() {
     this.modal.openModal();
