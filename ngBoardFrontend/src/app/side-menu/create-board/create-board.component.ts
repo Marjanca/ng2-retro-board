@@ -10,11 +10,31 @@ import { Board } from './../../board/models/board';
 })
 export class CreateBoardComponent {
 
-  @ViewChild('modal') modal: ModalComponent;
+  @ViewChild('modal') 
+  private modal: ModalComponent;
 
-  @Output() boardCreated: EventEmitter<Board> = new EventEmitter<any>();
+  @Output() 
+  private boardCreated: EventEmitter<Board> = new EventEmitter<any>();
 
-  boardTitle: string = '';
+  private boardTitle: string = '';
+
+  get BoardTitle() {
+    return this.boardTitle;
+  }
+
+  set BoardTitle(boardTitle: string) {
+    this.boardTitle = boardTitle;
+  }
+
+  get Modal() {
+    return this.modal;
+  }
+
+  get BoardCreated() {
+    return this.boardCreated;
+  }
+
+  get 
 
   openModal() {
     this.modal.openModal();
