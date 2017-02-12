@@ -43,7 +43,7 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.addNoteModal.openModal();
   }
 
-  // onNoteCreated(note) {
-  //   this.board.getNotes().push(note);
-  // }
+  onNoteCreated(note) {
+    this.board.getNotes().push(note);
+  }
 }
