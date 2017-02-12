@@ -10,10 +10,12 @@ import { CreateNoteComponent } from './create-note/create-note.component';
 /* tslint:disable:no-unused-variable */
 
 import { BoardComponent } from './board.component';
-import { NoteComponent } from '../note/note.component';
 import { BoardService } from './services/board.service';
 
-import { NoteCoords } from '../note/models/note-coords';
+import { NoteComponent } from '../note/note.component';
+import { NoteService } from '../note/services/note.service';
+
+
 import { Note } from '../note/models/note';
 import { Board } from './models/board';
 
@@ -37,6 +39,7 @@ describe('BoardComponent', () => {
       ],
       providers: [
         BoardService,
+        NoteService,
         { provide: ActivatedRoute, useValue: { 'params': Observable.from([{ 'id': 1 }]) } }
       ]
     })
@@ -48,14 +51,14 @@ describe('BoardComponent', () => {
     component = fixture.componentInstance;
 
     mockNotes = [
-      new Note('There is no spoon', 'Neo', new NoteCoords(100, 300, 1)),
-      new Note('I\'m going to make him an offer he can\'t refuse.', 'Corleone', new NoteCoords(200, 500, 1))
+      new Note(1, 1, 'There is no spoon', 'Neo', 100, 300, 1),
+      new Note(2, 1, 'I\'m going to make him an offer he can\'t refuse.', 'Corleone', 200, 500, 1)
     ];
 
     mockBoard = new Board(1, 'test board', 'test creator');
-    mockBoard.setNotes(mockNotes);
+    mockBoard.Notes = mockNotes;
 
-    component.board = mockBoard;
+    component.Board = mockBoard;
 
     fixture.detectChanges();
   });
@@ -72,7 +75,7 @@ describe('BoardComponent', () => {
 
     noteDivs.forEach((de, index) => {
       let divContent = de.nativeElement.textContent;
-      let expectedContent = mockNotes[index].text;
+      let expectedContent = mockNotes[index].Text;
 
       expect(divContent).toContain(expectedContent);
     });
@@ -94,9 +97,9 @@ describe('BoardComponent', () => {
     noteDivs.forEach((de, index) => {
       let note = mockNotes[index];
 
-      expect(de.nativeElement.style.top).toBe(note.coords.top + 'px');
-      expect(de.nativeElement.style.left).toBe(note.coords.left + 'px');
-      expect(de.nativeElement.style.zIndex).toBe(note.coords.zIndex.toString());
+      expect(de.nativeElement.style.top).toBe(note.Top + 'px');
+      expect(de.nativeElement.style.left).toBe(note.Left + 'px');
+      expect(de.nativeElement.style.zIndex).toBe(note.ZIndex.toString());
     });
   });
 
@@ -114,5 +117,11 @@ describe('BoardComponent', () => {
      addNoteButton.triggerEventHandler('click', null);
  
      expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');*/
+  });
+
+  it('should add note to board notes collection when onNoteCreated called', () => {
+    let note =  new Note(3, 1, 'some text', 'some author', 100, 200, 1);
+    component.onNoteCreated(note);
+    expect(component.Board.Notes[2].Id).toBe(note.Id);
   });
 });

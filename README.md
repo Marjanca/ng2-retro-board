@@ -1,3 +1,5 @@
+[ ![Codeship Status for Marjanca/ng2-retro-board](https://app.codeship.com/projects/4a8d8c50-a5d0-0134-92d2-463b4e974771/status?branch=master)](https://app.codeship.com/projects/190953)
+
 Focus group gathered around researching the possibilities of ng2 and learning how to use FE technologies in general.
 
 

@@ -7,6 +7,7 @@ import { CreateBoardComponent } from './create-board/create-board.component';
 import { SharedModule } from './../shared/shared.module';
 import { BoardService } from './services/board.service';
 import { CreateNoteComponent } from './create-note/create-note.component';
+import { NoteService } from '../note/services/note.service';
 import { BoardComponent } from './board.component';
 import { NoteComponent } from '../note/note.component';
 import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
@@ -29,6 +30,9 @@ import { DragNDropDirective } from '../note/dragNDrop/drag-n-drop.directive';
     BoardComponent,
     NoteComponent
   ],
-  providers: [BoardService]
+  providers: [
+    BoardService,
+    NoteService
+  ]
 })
 export class BoardModule { }

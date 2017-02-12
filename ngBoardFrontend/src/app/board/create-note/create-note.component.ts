@@ -1,22 +1,21 @@
 import { Component, ViewChild, Output, EventEmitter } from '@angular/core';
 
-import { NoteCoords } from './../../note/models/note-coords';
-import { Note } from './../../note/models/note';
-import { ModalComponent } from './../../shared/modal/modal.component';
+import { Note } from '../../note/models/note';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-create-note',
   templateUrl: './create-note.component.html',
   styleUrls: ['./create-note.component.scss']
 })
-export class CreateNoteComponent {
+export class AddNoteModalComponent {
 
-  @ViewChild('modal')
-  private modal: ModalComponent;
+  @ViewChild('modal') modal: ModalComponent;
 
   @Output()
   private noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
-
+  
+  private boardId: number;
   private noteText: string = '';
 
   get NoteText() {
@@ -31,7 +30,8 @@ export class CreateNoteComponent {
     return this.noteCreated;
   }
 
-  public openModal() {
+ public openModal(boardId: number) {
+    this.boardId = boardId;
     this.modal.openModal();
   }
 
@@ -41,10 +41,9 @@ export class CreateNoteComponent {
   }
 
   onSubmit() {
-    console.log('Add note modal submited.');
-    let note = new Note(this.noteText, '', new NoteCoords(100, 200, 300));
+    let note = new Note(0, this.boardId, this.noteText, '', 100, 200, 300);
     this.noteCreated.emit(note);
-    console.dir(note);
+    this.resetDefaults();
   }
 
   private resetDefaults() {

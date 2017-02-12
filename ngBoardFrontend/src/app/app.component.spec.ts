@@ -29,4 +29,14 @@ describe('AppComponent', () => {
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  it('should get board menu items when getBoardMenuItems called', async(() => {
+    let fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.componentInstance;
+    expect(app.getBoardMenuItems().length).toBe(2);
+    expect(app.getBoardMenuItems()[0].id).toBe(1);
+    expect(app.getBoardMenuItems()[0].name).toBe('January 2017');
+    expect(app.getBoardMenuItems()[1].id).toBe(2);
+    expect(app.getBoardMenuItems()[1].name).toBe('March 2017');
+  }));
 });

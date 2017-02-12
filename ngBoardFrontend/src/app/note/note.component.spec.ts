@@ -5,7 +5,6 @@ import { DebugElement } from '@angular/core';
 
 import { NoteComponent } from './note.component';
 import { Note } from './models/note';
-import { NoteCoords } from './models/note-coords';
 
 describe('NoteComponent', () => {
   let component: NoteComponent;
@@ -22,7 +21,7 @@ describe('NoteComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(NoteComponent);
     component = fixture.componentInstance;
-    component.note = new Note('text', 'author', new NoteCoords(12, 17, 1));
+    component.note = new Note(1, 0, 'text', 'author', 12, 17, 1);
     fixture.detectChanges();
   });
 

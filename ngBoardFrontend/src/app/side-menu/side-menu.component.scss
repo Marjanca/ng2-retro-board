@@ -4,95 +4,81 @@ $brandColor: #999999;
 $brandHoverColor: #fff;
 $linkColor: #999999;
 $linkHoverColor: #fff;
-
 .side-menu {
-    height: 800px;
-    width: $menuWidth;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    
-    background-color: $menuBackgroundColor;
-    overflow-x: hidden;
-    padding-top: 10px;
-    transition: 0.5s;
-
-    &.expanded {
-        left: 0;
+  min-height: 100vh;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0 auto;
+  width: $menuWidth;
+  z-index: 1;
+  background-color: $menuBackgroundColor;
+  overflow-x: hidden;
+  padding-top: 10px;
+  transition: 0.5s;
+  &.expanded {
+    left: 0;
+  }
+  &.contracted {
+    left: -$menuWidth + 20px;
+  }
+  .side-menu-main {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+    width: 100%;
+    padding-left: 30px;
+    a {
+      display: block;
+      color: $brandColor;
+      &:active,
+      &:focus {
+        text-decoration: none;
+      }
+      &:hover {
+        color: $brandHoverColor;
+        background: none;
+        text-decoration: none;
+        cursor: pointer;
+      }
     }
-
-    &.contracted {
-        left: -$menuWidth + 20px;
-    }
-
-    .side-menu-main {
-        height: 65px;
-        font-size: 18px;
-        line-height: 60px;
-        width: 100%;
-        padding-left: 30px;
-
+  }
+  .side-menu-boards-container {
+    overflow-y: auto;
+    width: 80%;
+    height: 40%;
+    .side-menu-boards-list {
+      top: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        text-indent: 20px;
+        line-height: 40px;
+        width: 80%;
         a {
-            display: block;
-            color: $brandColor;
-
-            &:active, &:focus {
-                text-decoration: none;
-            }
-
-            &:hover {
-                color: $brandHoverColor;
-                background: none;
-                text-decoration: none;
-                cursor: pointer;
-            }
+          display: block;
+          text-decoration: none;
+          color: $linkColor;
+          &:hover {
+            text-decoration: none;
+            color: $linkHoverColor;
+            cursor: pointer;
+          }
+          &:active,
+          &:focus {
+            text-decoration: none;
+          }
         }
+      }
     }
-
-    .side-menu-boards-container {
-        overflow-y: auto; 
-        width: 80%; 
-        height: 40%;
-
-        .side-menu-boards-list {
-            top: 0;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-
-            li {
-                text-indent: 20px;
-                line-height: 40px;
-                width: 80%;
-
-                a {
-                    display: block;
-                    text-decoration: none;
-                    color: $linkColor;
-
-                    &:hover {
-                        text-decoration: none;
-                        color: $linkHoverColor;
-                        cursor: pointer;
-                    }
-
-                    &:active, &:focus {
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-    }
+  }
 }
 
-
-
-
-
 hr {
-    width: 80%;
+  width: 80%;
 }
 
 ::-webkit-scrollbar {
-    display: none
+  display: none
 }
