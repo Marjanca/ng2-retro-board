@@ -1,0 +1,4 @@
+<app-modal #modal [title]="'Create Board'" (submit)="onSubmit()" (close)="onClose()">
+  <label for="board-title">Title:</label>
+  <input id="board-title" type="text" [(ngModel)]="boardTitle">
+</app-modal>

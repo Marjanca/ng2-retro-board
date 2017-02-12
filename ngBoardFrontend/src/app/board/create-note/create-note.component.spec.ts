@@ -4,26 +4,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { AddNoteModalComponent } from './add-note-modal.component';
+import { CreateNoteComponent } from './create-note.component';
 import { ModalComponent } from './../../shared/modal/modal.component';
 import { Note } from './../../note/models/note';
 
 describe('AddNoteModalComponent', () => {
-  let component: AddNoteModalComponent;
-  let fixture: ComponentFixture<AddNoteModalComponent>;
+  let component: CreateNoteComponent;
+  let fixture: ComponentFixture<CreateNoteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule
       ],
-      declarations: [AddNoteModalComponent, ModalComponent]
+      declarations: [CreateNoteComponent, ModalComponent]
     })
       .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddNoteModalComponent);
+    fixture = TestBed.createComponent(CreateNoteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -34,21 +34,21 @@ describe('AddNoteModalComponent', () => {
 
   it('should emit onNoteCreate event when Post button is clicked ', () => {
     let receivedNote: Note;
-    component.noteCreated.subscribe(emittedNote => receivedNote = emittedNote);
+    component.NoteCreated.subscribe(emittedNote => receivedNote = emittedNote);
 
-    let expectedNote = new Note(1, 1, 'some text', 'some author', 100, 200, 1);
-    component.boardId = expectedNote.boardId;
-    component.noteText = expectedNote.text;
+    let expectedNote = new Note(1, 1, 'some Text', 'some author', 100, 200, 1);
+    component.BoardId = expectedNote.BoardId;
+    component.NoteText = expectedNote.Text;
 
     component.onSubmit();
 
-    expect(receivedNote.boardId).toBe(expectedNote.boardId);
-    expect(receivedNote.text).toBe(expectedNote.text);
+    expect(receivedNote.BoardId).toBe(expectedNote.BoardId);
+    expect(receivedNote.Text).toBe(expectedNote.Text);
   });
 
-  it('should reset noteText after closing modal', () => {
-    component.noteText = 'Some note text';
+  it('should reset NoteText after closing modal', () => {
+    component.NoteText = 'Some note Text';
     component.onClose();
-    expect(component.noteText).toBe('');
+    expect(component.NoteText).toBe('');
   });
 });

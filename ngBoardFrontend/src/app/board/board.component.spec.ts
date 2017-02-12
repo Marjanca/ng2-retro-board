@@ -6,7 +6,7 @@ import { By } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Rx';
 
 import { ModalComponent } from './../shared/modal/modal.component';
-import { AddNoteModalComponent } from './add-note-modal/add-note-modal.component';
+import { CreateNoteComponent } from './create-note/create-note.component';
 /* tslint:disable:no-unused-variable */
 
 import { BoardComponent } from './board.component';
@@ -32,7 +32,7 @@ describe('BoardComponent', () => {
         FormsModule
       ],
       declarations: [
-        AddNoteModalComponent,
+        CreateNoteComponent,
         BoardComponent,
         NoteComponent,
         ModalComponent
