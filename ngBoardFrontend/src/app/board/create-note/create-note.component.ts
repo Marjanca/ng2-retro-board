@@ -8,15 +8,23 @@ import { ModalComponent } from '../../shared/modal/modal.component';
   templateUrl: './create-note.component.html',
   styleUrls: ['./create-note.component.scss']
 })
-export class AddNoteModalComponent {
+export class CreateNoteComponent {
 
   @ViewChild('modal') modal: ModalComponent;
 
   @Output()
   private noteCreated: EventEmitter<Note> = new EventEmitter<Note>();
-  
+
   private boardId: number;
   private noteText: string = '';
+
+  get BoardId() {
+    return this.boardId;
+  }
+
+  set BoardId(boardId: number) {
+    this.boardId = boardId;
+  }
 
   get NoteText() {
     return this.noteText;

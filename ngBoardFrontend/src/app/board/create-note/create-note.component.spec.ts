@@ -1,4 +1,3 @@
-import { ModalComponent } from './../../shared/modal/modal.component';
 import { FormsModule } from '@angular/forms';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -35,7 +34,7 @@ describe('AddNoteModalComponent', () => {
 
   it('should emit onNoteCreate event when Post button is clicked ', () => {
     let receivedNote: Note;
-    component.noteCreated.subscribe(emittedNote => receivedNote = emittedNote);
+    component.NoteCreated.subscribe(emittedNote => receivedNote = emittedNote);
 
     let expectedNote = new Note(1, 1, 'some Text', 'some author', 100, 200, 1);
     component.BoardId = expectedNote.BoardId;
