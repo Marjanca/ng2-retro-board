@@ -17,6 +17,24 @@ export class CreateNoteComponent {
 
   private boardId: number;
   private noteText: string = '';
+  private top: number = 100;
+  private left: number = 200;
+
+  get Top() {
+    return this.top;
+  }
+
+  set Top(top: number) {
+    this.top = top;
+  }
+
+  get Left() {
+    return this.left;
+  }
+
+  set Left(left: number) {
+    this.left = left;
+  }
 
   get BoardId() {
     return this.boardId;
@@ -49,12 +67,14 @@ export class CreateNoteComponent {
   }
 
   onSubmit() {
-    let note = new Note(0, this.boardId, this.noteText, '', 100, 200, 300);
+    let note = new Note(0, this.boardId, this.noteText, '', this.top, this.left, 300);
     this.noteCreated.emit(note);
     this.resetDefaults();
   }
 
   private resetDefaults() {
     this.noteText = '';
+    this.top = 100;
+    this.left = 200;
   }
 }
