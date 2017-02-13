@@ -1,5 +1,5 @@
 <h1 class="data-test-board-title pull-right">{{board.Title}}</h1>
-<div id="table" class="table" appDragNDrop>
+<div id="table" (dblclick)="setNoteCoords($event); openAddNoteModal();" class="table" appDragNDrop>
   <div>
     <button type="button" (click)="openAddNoteModal()" class="btn-floating data-test-add-note-button">+</button>
   </div>

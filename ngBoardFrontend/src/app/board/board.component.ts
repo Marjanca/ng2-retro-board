@@ -28,7 +28,7 @@ export class BoardComponent implements OnInit, OnDestroy {
   }
 
   set Board(board: Board) {
-      this.board = board;
+    this.board = board;
   }
 
   ngOnInit() {
@@ -48,6 +48,11 @@ export class BoardComponent implements OnInit, OnDestroy {
 
   openAddNoteModal() {
     this.addNoteModal.openModal(this.board.Id);
+  }
+
+  setNoteCoords(clickEvent: MouseEvent) {
+    this.addNoteModal.Top = clickEvent.pageY;
+    this.addNoteModal.Left = clickEvent.pageX;
   }
 
   onNoteCreated(note: Note) {
