@@ -110,18 +110,40 @@ describe('BoardComponent', () => {
     addNoteButton.triggerEventHandler('click', null);
 
     expect(component.addNoteModal.modal.isOpened()).toBeTruthy();
-    // Make sure modal is hidden
-    /* component.addNoteModal.modal.close();
- 
-     let addNoteButton = fixture.debugElement.query(By.css('.data-test-add-note-button'));
-     addNoteButton.triggerEventHandler('click', null);
- 
-     expect(component.addNoteModal.modal.nativeElement.style.display).toContain('block');*/
   });
 
   it('should add note to board notes collection when onNoteCreated called', () => {
-    let note =  new Note(3, 1, 'some text', 'some author', 100, 200, 1);
+    let note = new Note(3, 1, 'some text', 'some author', 100, 200, 1);
     component.onNoteCreated(note);
     expect(component.Board.Notes[2].Id).toBe(note.Id);
+  });
+
+  it('should show add note modal when board is double clicked', () => {
+    component.addNoteModal.modal.closeModal();
+
+    let board = fixture.debugElement.query(By.css('.data-test-table-div'));
+
+    let clickEvent = {
+      pageX: 100,
+      pageY: 200
+    };
+
+    board.triggerEventHandler('dblclick', clickEvent);
+
+    expect(component.addNoteModal.modal.isOpened()).toBeTruthy();
+  });
+
+  it('should set note coordinates when board is double clicked', () => {
+    let board = fixture.debugElement.query(By.css('.data-test-table-div'));
+
+    let clickEvent = {
+      pageX: 100,
+      pageY: 200
+    };
+
+    board.triggerEventHandler('dblclick', clickEvent);
+    
+    expect(component.addNoteModal.Left).toBe(100);
+    expect(component.addNoteModal.Top).toBe(200);
   });
 });
