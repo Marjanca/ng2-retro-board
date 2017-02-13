@@ -5,6 +5,8 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { LoginModule } from '../login/login.module';
+
 import { ModalComponent } from './../shared/modal/modal.component';
 import { CreateBoardComponent } from '../board/create-board/create-board.component';
 import { SideMenuComponent } from './side-menu.component';
@@ -22,8 +24,16 @@ describe('SideMenuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SideMenuComponent, CreateBoardComponent, ModalComponent],
-      imports: [RouterTestingModule, FormsModule]
+      declarations: [
+        SideMenuComponent,
+        CreateBoardComponent,
+        ModalComponent
+      ],
+      imports: [
+        RouterTestingModule,
+        FormsModule,
+        LoginModule
+      ]
     })
       .compileComponents();
   }));
