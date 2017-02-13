@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 
 import { BoardModule } from './../board/board.module';
 import { SharedModule } from './../shared/shared.module';
+import { LoginModule } from '../login/login.module';
+
 import { SideMenuComponent } from './side-menu.component';
 
 @NgModule({
@@ -16,7 +18,8 @@ import { SideMenuComponent } from './side-menu.component';
     CommonModule,
     RouterModule,
     SharedModule,
-    BoardModule
+    BoardModule,
+    LoginModule
   ],
   exports: [
     SideMenuComponent
