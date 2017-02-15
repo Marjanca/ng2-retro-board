@@ -142,7 +142,7 @@ describe('BoardComponent', () => {
     };
 
     board.triggerEventHandler('dblclick', clickEvent);
-    
+
     expect(component.addNoteModal.Left).toBe(100);
     expect(component.addNoteModal.Top).toBe(200);
   });
