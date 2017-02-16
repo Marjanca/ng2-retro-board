@@ -1,5 +1,4 @@
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component, DebugElement } from '@angular/core';
@@ -33,8 +32,7 @@ describe('SideMenuComponent', () => {
       imports: [
         RouterTestingModule,
         FormsModule,
-        LoginModule,
-        MaterialModule
+        LoginModule
       ]
     })
       .compileComponents();
