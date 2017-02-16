@@ -2,12 +2,12 @@
     <div *ngIf="!isLoggedIn()">
         <p>Login</p>
         <div>
-            <md-input-container>
-                <input md-input placeholder="User name" [(ngModel)]="username">
-            </md-input-container>
-            <md-input-container>
+            <div>
+                <input placeholder="User name" [(ngModel)]="username">
+            </div>
+            <div>
                 <input md-input placeholder="Password" [(ngModel)]="password">
-            </md-input-container>
+            </div>
             <div class="pull-right">
                 <button (click)="loginUser()">Log in</button>
             </div>
