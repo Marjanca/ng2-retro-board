@@ -1,14 +1,22 @@
 <div class="login">
-    <p>Login component</p>
-    <div>
-        <md-input-container>
-            <input md-input placeholder="User name" value="Jebemti">
-        </md-input-container>
-        <md-input-container>
-            <input md-input placeholder="Password" value="CSS">
-        </md-input-container>
+    <div *ngIf="!isLoggedIn()">
+        <p>Login</p>
+        <div>
+            <md-input-container>
+                <input md-input placeholder="User name" [(ngModel)]="username">
+            </md-input-container>
+            <md-input-container>
+                <input md-input placeholder="Password" [(ngModel)]="password">
+            </md-input-container>
+            <div class="pull-right">
+                <button (click)="loginUser()">Log in</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isLoggedIn()">
+        <p>Logout</p>
         <div class="pull-right">
-            <button md-button>Log in</button>
+            <button (click)="logoutUser()">Log out</button>
         </div>
     </div>
 </div>

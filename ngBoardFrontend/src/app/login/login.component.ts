@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 
+import { AuthService } from './services/auth.service';
+
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-    private username: string;
-    private password: string;
+    private username: string = '';
+    private password: string = '';
+
+    constructor(private AuthService: AuthService) {
+        this.AuthService = AuthService;
+    }
 
     get Username(): string {
         return this.username;
@@ -23,5 +29,17 @@ export class LoginComponent {
 
     set Password(password: string) {
         this.password = password;
+    }
+
+    loginUser() {
+        this.AuthService.login(this.username, this.password);
+    }
+
+    logoutUser() {
+        this.AuthService.logout();
+    }
+
+    isLoggedIn(): boolean {
+        return this.AuthService.isUserLoggedIn();
     }
 }

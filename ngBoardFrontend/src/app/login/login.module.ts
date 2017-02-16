@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
 import { LoginComponent } from './login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,9 @@ import { LoginComponent } from './login.component';
   ],
   exports: [
     LoginComponent
+  ],
+  providers: [
+    AuthService
   ]
 })
 export class LoginModule { }
