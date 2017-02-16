@@ -6,6 +6,7 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { LoginModule } from '../login/login.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { ModalComponent } from './../shared/modal/modal.component';
 import { CreateBoardComponent } from '../board/create-board/create-board.component';
@@ -26,13 +27,13 @@ describe('SideMenuComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         SideMenuComponent,
-        CreateBoardComponent,
-        ModalComponent
+        CreateBoardComponent
       ],
       imports: [
         RouterTestingModule,
         FormsModule,
-        LoginModule
+        LoginModule,
+        SharedModule
       ]
     })
       .compileComponents();
