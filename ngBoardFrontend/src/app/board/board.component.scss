@@ -7,3 +7,27 @@
   margin: 0 auto;
   background: #ddd;
 }
+
+.btn-floating {
+  width: 4vw;
+  height: 4vw;
+  position: absolute;
+  z-index: 99999;
+  font-size: x-large;
+  color: gray;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  border: 2px solid #f5f5f5;
+  overflow: hidden;
+  background-color: #EEEEA8;
+  box-shadow: 0 0 3px gray;
+  margin: 1em;
+  &:hover {
+    box-shadow: 0 0 5px gray;
+    border: 2px solid gray;
+  }
+  &:focus {
+    outline: none;
+  }
+}
