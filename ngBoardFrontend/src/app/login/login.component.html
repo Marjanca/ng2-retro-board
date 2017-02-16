@@ -1,21 +1,17 @@
-<div class="login">
+<div class="login container">
     <div *ngIf="!isLoggedIn()">
-        <p>Login</p>
-        <div>
-            <div>
-                <input placeholder="User name" [(ngModel)]="username">
+        <div class="row">
+            <div class="col-xs-8">
+                <input class="input" placeholder="Username" [(ngModel)]="username">
+                <input class="input" placeholder="Password" [(ngModel)]="password">
             </div>
-            <div>
-                <input md-input placeholder="Password" [(ngModel)]="password">
-            </div>
-            <div class="pull-right">
-                <button (click)="loginUser()">Log in</button>
+            <div class="col-xs-4">
+                <button (click)="loginUser()">Login</button>
             </div>
         </div>
     </div>
     <div *ngIf="isLoggedIn()">
-        <p>Logout</p>
-        <div class="pull-right">
+        <div class="row">
             <button (click)="logoutUser()">Log out</button>
         </div>
     </div>
