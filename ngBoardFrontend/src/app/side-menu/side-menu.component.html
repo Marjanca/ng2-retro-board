@@ -1,6 +1,6 @@
-<div [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
+<div (mouseenter)="toggleSideMenu(true, $event)" (mouseleave) ="toggleSideMenu(false, $event)" [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
   <div class="row side-menu-main">
-    <a (click)="toggleSideMenu()">ng2Board</a>
+    <p>ng2Board</p>
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search" id="search-term">
     </div>

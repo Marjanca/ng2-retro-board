@@ -13,10 +13,10 @@ export class SideMenuComponent {
   @ViewChild('createBoardModal') createBoardModal: CreateBoardComponent;
   @Input() boards: BoardMenuItem[];
 
-  sideMenuOpened: boolean = true;
+  sideMenuOpened: boolean = false;
 
-  toggleSideMenu() {
-    this.sideMenuOpened = !this.sideMenuOpened;
+  toggleSideMenu(value: boolean) {
+    this.sideMenuOpened = value;
   }
 
   openCreateBoardModal() {

@@ -20,7 +20,7 @@ $linkHoverColor: #fff;
     left: 0;
   }
   &.contracted {
-    left: -$menuWidth + 20px;
+    left: -$menuWidth + 1px;
   }
   .side-menu-main {
     height: 65px;
