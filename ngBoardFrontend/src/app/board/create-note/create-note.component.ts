@@ -24,16 +24,8 @@ export class CreateNoteComponent {
     return this.top;
   }
 
-  set Top(top: number) {
-    this.top = top;
-  }
-
   get Left() {
     return this.left;
-  }
-
-  set Left(left: number) {
-    this.left = left;
   }
 
   get BoardId() {
@@ -56,8 +48,10 @@ export class CreateNoteComponent {
     return this.noteCreated;
   }
 
- public openModal(boardId: number) {
+ public openModal(boardId: number, noteTop: number, noteLeft: number) {
     this.boardId = boardId;
+    this.top = noteTop;
+    this.left = noteLeft;
     this.modal.openModal();
   }
 

@@ -6,6 +6,7 @@ import { Board } from './models/board';
 import { BoardService } from './services/board.service';
 import { NoteService } from '../note/services/note.service';
 import { Note } from '../note/models/note';
+import { NOTE_DEFAULT_TOP, NOTE_DEFAULT_LEFT } from './../shared/constants';
 
 @Component({
   selector: 'app-board',
@@ -46,13 +47,12 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.routeParamsSub.unsubscribe();
   }
 
-  openAddNoteModal() {
-    this.addNoteModal.openModal(this.board.Id);
+  clickOpenAddNoteModal(clickEvent: MouseEvent) {
+    this.addNoteModal.openModal(this.board.Id, clickEvent.pageY, clickEvent.pageX);
   }
 
-  setNoteCoords(clickEvent: MouseEvent) {
-    this.addNoteModal.Top = clickEvent.pageY;
-    this.addNoteModal.Left = clickEvent.pageX;
+  btnOpenAddNoteModal() {
+    this.addNoteModal.openModal(this.board.Id, NOTE_DEFAULT_TOP, NOTE_DEFAULT_LEFT);
   }
 
   onNoteCreated(note: Note) {
