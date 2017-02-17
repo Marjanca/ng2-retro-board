@@ -57,13 +57,13 @@ describe('SideMenuComponent', () => {
     expect(menuitems.length).toBe(3);
   });
 
-  it('should show sidemenu on start', () => {
-    let sideMenuExpanded = fixture.debugElement.query(By.css('.expanded'));
+  it('should not show sidemenu on start', () => {
+    let sideMenuExpanded = fixture.debugElement.query(By.css('.contracted'));
     expect(sideMenuExpanded).toBeTruthy();
   });
 
   it('should close sidemenu on when toggleSideMenu called', () => {
-    component.toggleSideMenu();
+    component.toggleSideMenu(false);
     fixture.detectChanges();
     let sideMenuContracted = fixture.debugElement.query(By.css('.contracted'));
     expect(sideMenuContracted).toBeTruthy();
