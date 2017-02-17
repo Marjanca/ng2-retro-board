@@ -17,6 +17,16 @@ export class CreateNoteComponent {
 
   private boardId: number;
   private noteText: string = '';
+  private top: number = 100;
+  private left: number = 200;
+
+  get Top() {
+    return this.top;
+  }
+
+  get Left() {
+    return this.left;
+  }
 
   get BoardId() {
     return this.boardId;
@@ -38,8 +48,10 @@ export class CreateNoteComponent {
     return this.noteCreated;
   }
 
- public openModal(boardId: number) {
+ public openModal(boardId: number, noteTop: number, noteLeft: number) {
     this.boardId = boardId;
+    this.top = noteTop;
+    this.left = noteLeft;
     this.modal.openModal();
   }
 
@@ -49,12 +61,14 @@ export class CreateNoteComponent {
   }
 
   onSubmit() {
-    let note = new Note(0, this.boardId, this.noteText, '', 100, 200, 300);
+    let note = new Note(0, this.boardId, this.noteText, '', this.top, this.left, 300);
     this.noteCreated.emit(note);
     this.resetDefaults();
   }
 
   private resetDefaults() {
     this.noteText = '';
+    this.top = 100;
+    this.left = 200;
   }
 }
