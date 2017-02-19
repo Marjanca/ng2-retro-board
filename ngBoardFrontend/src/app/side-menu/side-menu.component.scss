@@ -31,20 +31,43 @@ $linkHoverColor: #fff;
 }
 
 .input-search {
-  font-size: 15px;
   margin-left: 20px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+.input-search input#search{
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.input-search .icon{
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  color: #4f5b66;
+  margin-left: 3px;
 }
 
 .side-menu-boards-container {
   overflow-y: auto;
   height: 40%;
+  float: left;
 }
 
 .side-menu-boards-list {
   top: 0;
   margin: 0;
   list-style: none;
-  padding-top: 20px;
+  margin-top: 20px;
   li {
     font-size: 18px;
     a {

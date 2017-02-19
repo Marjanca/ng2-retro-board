@@ -3,11 +3,11 @@
   <div class="side-menu-header">
     <span class="fa fa-sticky-note title"> Boards</span>
   </div>
+  <div class="input-search">
+    <span class="icon"><i class="fa fa-search"></i></span>
+    <input type="search" id="search" placeholder="Search boards..." />
+  </div>
   <div class="side-menu-boards-container">
-    <div class="input-search">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search boards..." />
-    </div>
     <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
         <a class="fa fa-window-restore" [routerLink]="['/board', board.id]"> {{board.name}}</a>
