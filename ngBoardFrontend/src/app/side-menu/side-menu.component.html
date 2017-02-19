@@ -1,16 +1,19 @@
 <!--<div (mouseenter)="toggleSideMenu(true, $event)" (mouseleave) ="toggleSideMenu(false, $event)" [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">-->
-<div [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">  
-  <div class="row side-menu-header">
+<div [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
+  <div class="side-menu-header">
     <span class="fa fa-sticky-note title"> Boards</span>
   </div>
   <div class="side-menu-boards-container">
-    <input type="text" class="fa input-search" placeholder="Board name" id="search-term">
+    <div class="input-search">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="Search boards..." />
+    </div>
     <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
         <a class="fa fa-window-restore" [routerLink]="['/board', board.id]"> {{board.name}}</a>
       </li>
     </ul>
-    <button type="button" class="fa fa-plus" (click)="openCreateBoardModal()"></button>    
+    <button type="button" class="fa fa-plus" (click)="openCreateBoardModal()"></button>
   </div>
   <app-login></app-login>
 </div>

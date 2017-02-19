@@ -25,9 +25,14 @@ $linkHoverColor: #fff;
 }
 
 .side-menu-header {
-  padding-left: 30px;
+  margin-left: 20px;
   font-size: 20px;
   padding-bottom: 20px;
+}
+
+.input-search {
+  font-size: 15px;
+  margin-left: 20px;
 }
 
 .side-menu-boards-container {
@@ -57,15 +62,6 @@ $linkHoverColor: #fff;
       }
     }
   }
-}
-
-.input-search {
-  font-size: 15px;
-  height: 20px;
-}
-
-hr {
-  width: 80%;
 }
 
 ::-webkit-scrollbar {
