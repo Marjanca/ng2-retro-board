@@ -1,19 +1,16 @@
-<div (mouseenter)="toggleSideMenu(true, $event)" (mouseleave) ="toggleSideMenu(false, $event)" [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">
-  <div class="row side-menu-main">
-    <p>ng2Board</p>
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search" id="search-term">
-    </div>
+<!--<div (mouseenter)="toggleSideMenu(true, $event)" (mouseleave) ="toggleSideMenu(false, $event)" [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">-->
+<div [ngClass]="'side-menu ' + (sideMenuOpened ? 'expanded' : 'contracted')">  
+  <div class="row side-menu-header">
+    <span class="fa fa-sticky-note title"> Boards</span>
   </div>
-  <br>
-  <br>
   <div class="side-menu-boards-container">
-    <button type="button" (click)="openCreateBoardModal()">Create board</button>
+    <input type="text" class="fa input-search" placeholder="Board name" id="search-term">
     <ul class="side-menu-boards-list">
       <li *ngFor="let board of boards">
-        <a [routerLink]="['/board', board.id]">{{board.name}}</a>
+        <a class="fa fa-window-restore" [routerLink]="['/board', board.id]"> {{board.name}}</a>
       </li>
     </ul>
+    <button type="button" class="fa fa-plus" (click)="openCreateBoardModal()"></button>    
   </div>
   <app-login></app-login>
 </div>

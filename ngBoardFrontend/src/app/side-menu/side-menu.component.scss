@@ -1,9 +1,10 @@
 $menuWidth: 250px;
-$menuBackgroundColor: rgba( 0, 0, 0, 0.8);
+$menuBackgroundColor: rgba( 169, 169, 169, 0.8);
 $brandColor: #999999;
 $brandHoverColor: #fff;
 $linkColor: #999999;
 $linkHoverColor: #fff;
+
 .side-menu {
   min-height: 100vh;
   max-height: 100%;
@@ -14,7 +15,6 @@ $linkHoverColor: #fff;
   z-index: 1;
   background-color: $menuBackgroundColor;
   overflow-x: hidden;
-  padding-top: 10px;
   transition: 0.5s;
   &.expanded {
     left: 0;
@@ -22,57 +22,46 @@ $linkHoverColor: #fff;
   &.contracted {
     left: -$menuWidth + 1px;
   }
-  .side-menu-main {
-    height: 65px;
+}
+
+.side-menu-header {
+  padding-left: 30px;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.side-menu-boards-container {
+  overflow-y: auto;
+  height: 40%;
+}
+
+.side-menu-boards-list {
+  top: 0;
+  margin: 0;
+  list-style: none;
+  padding-top: 20px;
+  li {
     font-size: 18px;
-    line-height: 60px;
-    width: 100%;
-    padding-left: 30px;
     a {
       display: block;
-      color: $brandColor;
+      text-decoration: none;
+      color: $linkColor;
+      &:hover {
+        text-decoration: none;
+        color: $linkHoverColor;
+        cursor: pointer;
+      }
       &:active,
       &:focus {
         text-decoration: none;
       }
-      &:hover {
-        color: $brandHoverColor;
-        background: none;
-        text-decoration: none;
-        cursor: pointer;
-      }
     }
   }
-  .side-menu-boards-container {
-    overflow-y: auto;
-    width: 80%;
-    height: 40%;
-    .side-menu-boards-list {
-      top: 0;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      li {
-        text-indent: 20px;
-        line-height: 40px;
-        width: 80%;
-        a {
-          display: block;
-          text-decoration: none;
-          color: $linkColor;
-          &:hover {
-            text-decoration: none;
-            color: $linkHoverColor;
-            cursor: pointer;
-          }
-          &:active,
-          &:focus {
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
+}
+
+.input-search {
+  font-size: 15px;
+  height: 20px;
 }
 
 hr {
